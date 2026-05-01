@@ -1,0 +1,1319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ZQ Films | Wedding Videographer in Germany</title>
+  <meta name="description" content="Germany-based wedding videographer crafting honest, emotional and cinematic wedding stories across Europe and beyond." />
+
+  <!-- Fonts: replace with your preferred licensed fonts if needed -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --ivory: #f8f4ec;
+      --warm-white: #fffdf8;
+      --beige: #e7ddce;
+      --taupe: #8f8275;
+      --champagne: #c8ad7f;
+      --charcoal: #1c1b19;
+      --soft-black: #11100f;
+      --muted: #6e6a65;
+      --line: rgba(28, 27, 25, 0.16);
+      --max: 1180px;
+      --ease: cubic-bezier(.22,.61,.36,1);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "Inter", sans-serif;
+      color: var(--charcoal);
+      background: var(--warm-white);
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    img, video {
+      width: 100%;
+      display: block;
+      object-fit: cover;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(var(--max), calc(100% - 48px));
+      margin: 0 auto;
+    }
+
+    .site-header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 76px;
+      z-index: 1000;
+      background: rgba(255, 253, 248, 0.86);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(28, 27, 25, 0.08);
+    }
+
+    .nav {
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      display: inline-flex;
+      align-items: center;
+      width: 150px;
+      height: 44px;
+    }
+
+    .logo img {
+      width: 100%;
+      height: auto;
+      display: block;
+      object-fit: contain;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 34px;
+      font-size: .77rem;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+
+    .nav-links a {
+      position: relative;
+      padding: 10px 0;
+    }
+
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 4px;
+      width: 0;
+      height: 1px;
+      background: var(--charcoal);
+      transition: width .35s var(--ease);
+    }
+
+    .nav-links a:hover::after,
+    .nav-links a.active::after {
+      width: 100%;
+    }
+
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+    }
+
+    .language-switcher {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      padding-left: 24px;
+      border-left: 1px solid rgba(28, 27, 25, 0.18);
+    }
+
+    .lang-btn {
+      border: none;
+      background: transparent;
+      color: rgba(28, 27, 25, 0.55);
+      font-family: inherit;
+      font-size: .72rem;
+      letter-spacing: .11em;
+      text-transform: uppercase;
+      cursor: pointer;
+      padding: 8px 6px;
+      transition: color .25s var(--ease);
+    }
+
+    .lang-btn:hover,
+    .lang-btn.active {
+      color: var(--charcoal);
+    }
+
+    .hero {
+      min-height: 100vh;
+      position: relative;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      background: var(--charcoal);
+      color: #fff;
+      padding-top: 76px;
+    }
+
+    .hero-video {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+      opacity: .72;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      background:
+        linear-gradient(90deg, rgba(12,12,11,.76) 0%, rgba(12,12,11,.42) 42%, rgba(12,12,11,.16) 100%),
+        linear-gradient(180deg, rgba(0,0,0,.26), rgba(0,0,0,.36));
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 760px;
+      padding: 110px 0 96px;
+    }
+
+    .eyebrow {
+      font-size: .76rem;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,.78);
+      margin-bottom: 24px;
+    }
+
+    h1, h2, h3 {
+      font-family: "Cormorant Garamond", serif;
+      font-weight: 500;
+      line-height: .96;
+    }
+
+    h1 {
+      font-size: clamp(2.8rem, 5.2vw, 5.6rem);
+      letter-spacing: -.032em;
+      line-height: 1.06;
+      max-width: 760px;
+    }
+
+    .hero p {
+      max-width: 520px;
+      margin-top: 28px;
+      color: rgba(255,255,255,.82);
+      font-size: .98rem;
+      line-height: 1.9;
+    }
+
+    .hero-actions {
+      margin-top: 38px;
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 150px;
+      height: 48px;
+      padding: 0 26px;
+      border-radius: 999px;
+      border: 1px solid currentColor;
+      font-size: .76rem;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      transition: all .35s var(--ease);
+      cursor: pointer;
+      background: transparent;
+      font-family: inherit;
+    }
+
+    .btn-light {
+      color: #fff;
+    }
+
+    .btn-light:hover {
+      background: #fff;
+      color: var(--charcoal);
+    }
+
+    .btn-dark {
+      color: var(--charcoal);
+    }
+
+    .btn-dark:hover {
+      background: var(--charcoal);
+      color: #fff;
+    }
+
+    section {
+      scroll-margin-top: 86px;
+    }
+
+    .section-pad {
+      padding: 130px 0;
+    }
+
+    .section-kicker {
+      font-size: .76rem;
+      text-transform: uppercase;
+      letter-spacing: .19em;
+      color: var(--taupe);
+      margin-bottom: 20px;
+    }
+
+    .section-title {
+      font-size: clamp(2.5rem, 4.25vw, 4.85rem);
+      letter-spacing: -.035em;
+      line-height: 1.08;
+      max-width: 760px;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: .92fr 1.08fr;
+      gap: 76px;
+      align-items: center;
+    }
+
+    .about-media {
+      position: relative;
+      min-height: 640px;
+    }
+
+    .portrait-main,
+    .portrait-small {
+      border-radius: 4px;
+      overflow: hidden;
+      box-shadow: 0 24px 70px rgba(28, 27, 25, .08);
+    }
+
+    .portrait-main {
+      height: 610px;
+      width: 82%;
+      background: var(--beige);
+    }
+
+    .portrait-small {
+      position: absolute;
+      right: 0;
+      bottom: 12px;
+      width: 48%;
+      height: 280px;
+      border: 12px solid var(--warm-white);
+    }
+
+    .about-copy {
+      max-width: 640px;
+      margin-left: auto;
+    }
+
+    .about-copy .lead {
+      font-family: "Cormorant Garamond", serif;
+      font-size: clamp(1.65rem, 2.35vw, 2.55rem);
+      line-height: 1.18;
+      margin: 24px 0 30px;
+      color: var(--charcoal);
+    }
+
+    .about-copy p {
+      color: var(--muted);
+      margin-bottom: 22px;
+      max-width: 590px;
+    }
+
+    .about-points {
+      margin-top: 44px;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 34px;
+      border-top: 1px solid var(--line);
+      padding-top: 34px;
+    }
+
+    .about-points h3 {
+      font-family: "Inter", sans-serif;
+      font-size: .78rem;
+      letter-spacing: .17em;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+
+    .about-points p {
+      font-size: .92rem;
+      margin: 0;
+    }
+
+    .why-film {
+      background: var(--warm-white);
+      border-top: 1px solid rgba(28,27,25,.06);
+      border-bottom: 1px solid rgba(28,27,25,.06);
+    }
+
+    .conversion-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 72px;
+      align-items: start;
+    }
+
+    .conversion-copy p {
+      color: var(--muted);
+      max-width: 560px;
+      margin-top: 28px;
+    }
+
+    .value-list {
+      display: grid;
+      gap: 26px;
+      padding-top: 20px;
+    }
+
+    .value-item {
+      border-top: 1px solid var(--line);
+      padding-top: 24px;
+    }
+
+    .value-item h3 {
+      font-family: "Inter", sans-serif;
+      font-size: .78rem;
+      letter-spacing: .17em;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+
+    .value-item p {
+      color: var(--muted);
+      font-size: .94rem;
+      margin: 0;
+    }
+
+    .approach-trust {
+      background: var(--warm-white);
+    }
+
+    .approach-wrap {
+      display: grid;
+      grid-template-columns: .95fr 1.05fr;
+      gap: 82px;
+      align-items: start;
+    }
+
+    .approach-wrap p {
+      color: var(--muted);
+      margin-bottom: 24px;
+    }
+
+    .trust-panel {
+      border: 1px solid rgba(28,27,25,.12);
+      padding: 38px;
+      background: rgba(255,255,255,.48);
+    }
+
+    .trust-panel h3 {
+      font-size: clamp(2rem, 3vw, 3.2rem);
+      margin-bottom: 24px;
+    }
+
+    .trust-list {
+      list-style: none;
+      display: grid;
+      gap: 14px;
+      color: var(--muted);
+    }
+
+    .trust-list li {
+      padding-bottom: 14px;
+      border-bottom: 1px solid rgba(28,27,25,.08);
+    }
+
+    .film-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 22px;
+    }
+
+    .film-tags span {
+      border: 1px solid rgba(255,255,255,.36);
+      border-radius: 999px;
+      padding: 7px 11px;
+      color: rgba(255,255,255,.82);
+      font-size: .62rem;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+
+    .faq-section {
+      background: var(--ivory);
+    }
+
+    .faq-grid {
+      display: grid;
+      grid-template-columns: .75fr 1.25fr;
+      gap: 72px;
+      align-items: start;
+    }
+
+    .faq-list {
+      display: grid;
+      gap: 22px;
+    }
+
+    .faq-item {
+      border-top: 1px solid var(--line);
+      padding-top: 22px;
+    }
+
+    .faq-item h3 {
+      font-family: "Inter", sans-serif;
+      font-size: .9rem;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+
+    .faq-item p {
+      color: var(--muted);
+      margin: 0;
+    }
+
+    .investment-note {
+      margin-top: 34px;
+      padding-top: 28px;
+      border-top: 1px solid rgba(255,255,255,.18);
+      color: rgba(255,255,255,.78);
+      max-width: 500px;
+    }
+
+    .investment-note strong {
+      display: block;
+      color: #fff;
+      margin-bottom: 10px;
+      font-family: "Cormorant Garamond", serif;
+      font-size: 1.8rem;
+      font-weight: 500;
+    }
+
+    .films {
+      background: var(--ivory);
+      overflow: hidden;
+    }
+
+    .films-intro {
+      text-align: center;
+      max-width: 760px;
+      margin: 0 auto 92px;
+    }
+
+    .films-intro .section-title {
+      margin: 0 auto;
+    }
+
+    .films-intro p {
+      margin: 28px auto 0;
+      color: var(--muted);
+      max-width: 520px;
+    }
+
+    .film-list {
+      display: grid;
+      gap: 76px;
+    }
+
+    .film-feature {
+      max-width: 1180px;
+      margin: 0 auto;
+    }
+
+    .film-preview {
+      position: relative;
+      aspect-ratio: 16 / 9;
+      overflow: hidden;
+      background: var(--taupe);
+      box-shadow: 0 30px 90px rgba(28,27,25,.1);
+      color: #fff;
+    }
+
+    .film-preview img,
+    .film-preview video {
+      height: 100%;
+      filter: saturate(.9) contrast(.98);
+      transition: transform 1.35s var(--ease), filter 1.35s var(--ease);
+    }
+
+    .film-preview::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(90deg, rgba(9,9,8,.70) 0%, rgba(9,9,8,.38) 44%, rgba(9,9,8,.16) 100%),
+        linear-gradient(180deg, rgba(0,0,0,.14), rgba(0,0,0,.46));
+      z-index: 1;
+    }
+
+    .film-feature:hover .film-preview img,
+    .film-feature:hover .film-preview video {
+      transform: scale(1.025);
+      filter: saturate(.98) contrast(1.02);
+    }
+
+    .film-overlay {
+      position: absolute;
+      z-index: 3;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: clamp(34px, 6vw, 82px);
+      max-width: 760px;
+    }
+
+    .film-overlay blockquote {
+      font-family: "Cormorant Garamond", serif;
+      font-size: clamp(1.9rem, 3.35vw, 3.85rem);
+      line-height: 1.08;
+      letter-spacing: -.026em;
+      margin-bottom: 20px;
+      max-width: 680px;
+      text-wrap: balance;
+    }
+
+    .film-overlay cite {
+      font-style: normal;
+      color: rgba(255,255,255,.78);
+      font-size: .78rem;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      margin-bottom: 42px;
+    }
+
+    .film-overlay h3 {
+      font-size: clamp(1.9rem, 3vw, 3.25rem);
+      letter-spacing: -.03em;
+      margin-bottom: 12px;
+    }
+
+    .film-overlay .location {
+      color: rgba(255,255,255,.72);
+      font-size: .74rem;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+
+    .film-overlay p {
+      color: rgba(255,255,255,.78);
+      max-width: 520px;
+      margin-bottom: 34px;
+    }
+
+    .film-overlay .btn {
+      width: fit-content;
+    }
+
+    .play-mark {
+      position: absolute;
+      z-index: 3;
+      right: clamp(34px, 6vw, 82px);
+      top: 50%;
+      transform: translateY(-50%);
+      width: 86px;
+      height: 86px;
+      border: 1px solid rgba(255,255,255,.72);
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      color: #fff;
+      background: rgba(255,255,255,.08);
+      backdrop-filter: blur(3px);
+      transition: all .35s var(--ease);
+    }
+
+    .play-mark::before {
+      content: "";
+      width: 0;
+      height: 0;
+      border-top: 10px solid transparent;
+      border-bottom: 10px solid transparent;
+      border-left: 15px solid currentColor;
+      margin-left: 4px;
+    }
+
+    .film-feature:hover .play-mark {
+      transform: translateY(-50%) scale(1.06);
+      background: rgba(255,255,255,.16);
+    }
+
+    .enquiry {
+      position: relative;
+      color: #fff;
+      background: var(--soft-black);
+      overflow: hidden;
+    }
+
+    .enquiry-bg {
+      position: absolute;
+      inset: 0;
+      opacity: .34;
+      filter: grayscale(.1);
+    }
+
+    .enquiry::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(90deg, rgba(12,12,11,.92), rgba(12,12,11,.58));
+      z-index: 1;
+    }
+
+    .enquiry-inner {
+      position: relative;
+      z-index: 2;
+      display: grid;
+      grid-template-columns: .92fr 1.08fr;
+      gap: 78px;
+      align-items: start;
+    }
+
+    .enquiry-copy h2 {
+      font-size: clamp(2.55rem, 4.35vw, 4.9rem);
+      letter-spacing: -.035em;
+      line-height: 1.08;
+      max-width: 720px;
+    }
+
+    .enquiry-copy p {
+      max-width: 450px;
+      margin-top: 26px;
+      color: rgba(255,255,255,.76);
+    }
+
+    .contact-lines {
+      margin-top: 56px;
+      display: grid;
+      gap: 13px;
+      color: rgba(255,255,255,.7);
+      font-size: .9rem;
+    }
+
+    .form {
+      background: rgba(255, 253, 248, .92);
+      color: var(--charcoal);
+      padding: 42px;
+      border-radius: 4px;
+      max-width: 560px;
+      margin-left: auto;
+    }
+
+    .form-row {
+      display: grid;
+      gap: 9px;
+      margin-bottom: 20px;
+    }
+
+    label {
+      font-size: .72rem;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--taupe);
+    }
+
+    input, textarea {
+      width: 100%;
+      border: none;
+      border-bottom: 1px solid rgba(28,27,25,.24);
+      padding: 12px 0 14px;
+      font-family: inherit;
+      font-size: .95rem;
+      background: transparent;
+      color: var(--charcoal);
+      outline: none;
+      transition: border-color .25s ease;
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 110px;
+    }
+
+    input:focus, textarea:focus {
+      border-color: var(--charcoal);
+    }
+
+    .form .btn {
+      margin-top: 14px;
+    }
+
+    .footer-minimal {
+      position: relative;
+      z-index: 2;
+      padding-top: 80px;
+      display: flex;
+      justify-content: space-between;
+      gap: 24px;
+      color: rgba(255,255,255,.48);
+      font-size: .78rem;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+
+    @media (max-width: 900px) {
+      .nav-right {
+        gap: 16px;
+      }
+
+      .nav-links {
+        gap: 18px;
+        font-size: .68rem;
+      }
+
+      .language-switcher {
+        padding-left: 14px;
+      }
+
+      .lang-btn {
+        font-size: .64rem;
+        padding: 6px 3px;
+      }
+
+      .about-grid,
+      .films-header,
+      .film-card,
+      .film-card:nth-child(even),
+      .enquiry-inner {
+        grid-template-columns: 1fr;
+      }
+
+      .film-card:nth-child(even) .film-visual {
+        order: initial;
+      }
+
+      .film-visual {
+        min-height: 380px;
+      }
+
+      .about-media {
+        min-height: 520px;
+      }
+
+      .portrait-main {
+        height: 500px;
+      }
+
+      .enquiry-copy h2 {
+        max-width: 680px;
+      }
+
+      .form {
+        margin-left: 0;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .container {
+        width: min(100% - 28px, var(--max));
+      }
+
+      .site-header {
+        height: 68px;
+      }
+
+      .logo {
+        width: 118px;
+        height: 38px;
+      }
+
+      .nav-right {
+        gap: 8px;
+      }
+
+      .nav-links {
+        gap: 10px;
+      }
+
+      .nav-links a {
+        font-size: .58rem;
+      }
+
+      .language-switcher {
+        gap: 2px;
+        padding-left: 8px;
+      }
+
+      .lang-btn {
+        font-size: .56rem;
+        letter-spacing: .05em;
+      }
+
+      .hero {
+        padding-top: 68px;
+      }
+
+      h1 {
+        font-size: clamp(2.7rem, 10.8vw, 4.1rem);
+      }
+
+      .section-title {
+        font-size: clamp(2.35rem, 9vw, 3.7rem);
+      }
+
+      .enquiry-copy h2 {
+        font-size: clamp(2.35rem, 9vw, 3.75rem);
+      }
+
+      .section-pad {
+        padding: 92px 0;
+      }
+
+      .about-points {
+        grid-template-columns: 1fr;
+      }
+
+      .portrait-main {
+        width: 100%;
+      }
+
+      .portrait-small {
+        display: none;
+      }
+
+      .film-quote {
+        left: 22px;
+        right: 22px;
+        bottom: 26px;
+      }
+
+      .film-overlay blockquote {
+        font-size: clamp(1.8rem, 7.6vw, 2.75rem);
+        line-height: 1.1;
+      }
+
+      .film-overlay h3 {
+        font-size: clamp(1.75rem, 7vw, 2.5rem);
+      }
+
+      .play-mark {
+        width: 62px;
+        height: 62px;
+        right: 24px;
+      }
+
+      .form {
+        padding: 28px;
+      }
+
+      .footer-minimal {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav">
+      <a href="#home" class="logo" aria-label="ZQ Films Home">
+        <!-- Replace this file with your final logo image. Recommended: transparent PNG or SVG. -->
+        <img src="assets/zq-films-logo.png" alt="ZQ Films" />
+      </a>
+      <div class="nav-right">
+        <nav class="nav-links" aria-label="Main navigation">
+          <a href="#home" class="active" data-i18n="nav.home">Home</a>
+          <a href="#about" data-i18n="nav.about">About</a>
+          <a href="#films" data-i18n="nav.films">Films</a>
+          <a href="#faq" data-i18n="nav.faq">FAQ</a>
+          <a href="#enquiry" data-i18n="nav.enquire">Enquire</a>
+        </nav>
+        <div class="language-switcher" aria-label="Language switcher">
+          <button class="lang-btn active" type="button" data-lang="de">DE</button>
+          <button class="lang-btn" type="button" data-lang="en">EN</button>
+          <button class="lang-btn" type="button" data-lang="zh">中文</button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section id="home" class="hero">
+      <!-- Replace hero-video.mp4 with your own wedding highlight reel. Keep poster image for loading/mobile fallback. -->
+      <video class="hero-video" autoplay muted loop playsinline poster="https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=2200&auto=format&fit=crop">
+        <source src="assets/hero-wedding-reel.mp4" type="video/mp4" />
+      </video>
+      <div class="container hero-content">
+        <div class="eyebrow" data-i18n="hero.eyebrow">Germany · Europe · Worldwide</div>
+        <h1 data-i18n="hero.title">Wedding films that remember how it felt.</h1>
+        <p data-i18n="hero.subtitle">Germany-based wedding videographer crafting honest, emotional and cinematic stories across Europe and beyond.</p>
+        <div class="hero-actions">
+          <a href="#films" class="btn btn-light" data-i18n="cta.viewFilms">View Films</a>
+          <a href="#enquiry" class="btn btn-light" data-i18n="cta.enquire">Enquire</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="section-pad">
+      <div class="container about-grid">
+        <div class="about-media">
+          <!-- Replace with your portrait / behind-the-scenes working photo -->
+          <div class="portrait-main">
+            <img src="https://images.unsplash.com/photo-1532712938310-34cb3982ef74?q=80&w=1400&auto=format&fit=crop" alt="Wedding videographer working behind the scenes" />
+          </div>
+          <div class="portrait-small">
+            <img src="https://images.unsplash.com/photo-1523438885200-e635ba2c371e?q=80&w=900&auto=format&fit=crop" alt="Emotional wedding moment" />
+          </div>
+        </div>
+
+        <div class="about-copy">
+          <div class="section-kicker" data-i18n="about.kicker">About the videographer</div>
+          <h2 class="section-title" data-i18n="about.title">I do not simply film what happens.</h2>
+          <p class="lead" data-i18n="about.lead">I capture how it felt.</p>
+          <p data-i18n="about.p1">ZQ Films is a personal wedding videography brand based in Germany, created for couples who value feeling over perfection. My work blends documentary honesty with cinematic beauty, preserving not only how your day looked, but how it moved, sounded, and stayed with you.</p>
+          <p data-i18n="about.p2">I look for the quiet gestures, the glances before the ceremony, the laughter that breaks tension, the tears no one planned, and the rhythm that makes your celebration uniquely yours.</p>
+
+          <div class="about-points">
+            <div>
+              <h3 data-i18n="about.point1Title">Real emotions</h3>
+              <p data-i18n="about.point1Text">Unstaged moments, honest expressions, and the natural energy between people.</p>
+            </div>
+            <div>
+              <h3 data-i18n="about.point2Title">Cinematic beauty</h3>
+              <p data-i18n="about.point2Text">Elegant framing, atmosphere, music, and pacing shaped into a timeless film.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="why-film" class="why-film section-pad">
+      <div class="container conversion-grid">
+        <div class="conversion-copy">
+          <div class="section-kicker" data-i18n="why.kicker">Why film</div>
+          <h2 class="section-title" data-i18n="why.title">Photography shows how it looked. Film brings back how it felt.</h2>
+          <p data-i18n="why.text">A wedding film preserves the things photographs cannot hold on their own: your voices, vows, laughter, the sound of your families, the music, the movement, and the atmosphere of the day.</p>
+        </div>
+        <div class="value-list">
+          <div class="value-item">
+            <h3 data-i18n="why.item1Title">Voices & vows</h3>
+            <p data-i18n="why.item1Text">The words, pauses and emotions that become more meaningful with time.</p>
+          </div>
+          <div class="value-item">
+            <h3 data-i18n="why.item2Title">Natural, not staged</h3>
+            <p data-i18n="why.item2Text">A quiet filming approach that lets you stay present with your people.</p>
+          </div>
+          <div class="value-item">
+            <h3 data-i18n="why.item3Title">Long-term memory</h3>
+            <p data-i18n="why.item3Text">A film becomes more valuable as the day moves further into the past.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="films" class="films section-pad">
+      <div class="container">
+        <div class="films-intro">
+          <div class="section-kicker" data-i18n="films.kicker">Selected films</div>
+          <h2 class="section-title" data-i18n="films.title">Stories that feel like cinema.</h2>
+          <p data-i18n="films.intro">Each selected film is presented like a hero scene: a 16:9 cinematic frame, a quote, a place, and the feeling that stayed after the day ended.</p>
+        </div>
+
+        <div class="film-list">
+          <article class="film-feature">
+            <a class="film-preview" href="#enquiry" aria-label="Watch Villa Astor wedding film">
+              <!-- Replace with your 16:9 film still or video preview -->
+              <video class="film-bg-video" muted loop playsinline preload="none" poster="https://images.unsplash.com/photo-1520854221256-17451cc331bf?q=80&w=2200&auto=format&fit=crop">
+                <source src="assets/villa-astor-preview.mp4" type="video/mp4" />
+              </video>
+              <div class="film-overlay">
+                <div class="film-tags"><span data-i18n="film1.tag1">Destination Wedding</span><span data-i18n="film1.tag2">Full Day Coverage</span><span data-i18n="film1.tag3">Emotional Documentary</span></div>
+                <blockquote data-i18n="film1.quote">“Like watching a movie.”</blockquote>
+                <cite data-i18n="film1.cite">Iris & Pedro · Villa Astor, Sorrento, Italy</cite>
+                <h3 data-i18n="film1.title">Villa Astor</h3>
+                <div class="location" data-i18n="film1.location">Sorrento, Italy</div>
+                <p data-i18n="film1.description">A Mediterranean wedding film shaped by soft light, elegant silence, and the feeling of two people fully present with each other.</p>
+                <span class="btn btn-light" data-i18n="cta.watchFilm">Watch Film</span>
+              </div>
+              <span class="play-mark" aria-hidden="true"></span>
+            </a>
+          </article>
+
+          <article class="film-feature">
+            <a class="film-preview" href="#enquiry" aria-label="Watch Château Vieux wedding film">
+              <video class="film-bg-video" muted loop playsinline preload="none" poster="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?q=80&w=2200&auto=format&fit=crop">
+                <source src="assets/chateau-vieux-preview.mp4" type="video/mp4" />
+              </video>
+              <div class="film-overlay">
+                <div class="film-tags"><span data-i18n="film2.tag1">Castle Wedding</span><span data-i18n="film2.tag2">France</span><span data-i18n="film2.tag3">Candlelight Story</span></div>
+                <blockquote data-i18n="film2.quote">“We felt everything again.”</blockquote>
+                <cite data-i18n="film2.cite">Elise & Marc · Château Vieux, Bordeaux, France</cite>
+                <h3 data-i18n="film2.title">Château Vieux</h3>
+                <div class="location" data-i18n="film2.location">Bordeaux, France</div>
+                <p data-i18n="film2.description">A delicate story of glances, candlelight, old stone arches, and laughter that moved softly through the evening.</p>
+                <span class="btn btn-light" data-i18n="cta.watchFilm">Watch Film</span>
+              </div>
+              <span class="play-mark" aria-hidden="true"></span>
+            </a>
+          </article>
+
+          <article class="film-feature">
+            <a class="film-preview" href="#enquiry" aria-label="Watch Alpine Vows wedding film">
+              <video class="film-bg-video" muted loop playsinline preload="none" poster="https://images.unsplash.com/photo-1519225421980-715cb0215aed?q=80&w=2200&auto=format&fit=crop">
+                <source src="assets/alpine-vows-preview.mp4" type="video/mp4" />
+              </video>
+              <div class="film-overlay">
+                <div class="film-tags"><span data-i18n="film3.tag1">Alpine Wedding</span><span data-i18n="film3.tag2">Germany</span><span data-i18n="film3.tag3">Intimate Celebration</span></div>
+                <blockquote data-i18n="film3.quote">“It brought us back to that day.”</blockquote>
+                <cite data-i18n="film3.cite">Sofia & Lukas · Alpine Vows, Bavaria, Germany</cite>
+                <h3 data-i18n="film3.title">Alpine Vows</h3>
+                <div class="location" data-i18n="film3.location">Bavaria, Germany</div>
+                <p data-i18n="film3.description">Crisp mountain air, whispered promises, and the gentle rhythm of nature framing a celebration with quiet depth.</p>
+                <span class="btn btn-light" data-i18n="cta.watchFilm">Watch Film</span>
+              </div>
+              <span class="play-mark" aria-hidden="true"></span>
+            </a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="approach-trust section-pad">
+      <div class="container approach-wrap">
+        <div>
+          <div class="section-kicker" data-i18n="approach.kicker">Approach</div>
+          <h2 class="section-title" data-i18n="approach.title">Present, but never intrusive.</h2>
+        </div>
+        <div>
+          <p data-i18n="approach.p1">I film quietly and intuitively, without turning your wedding into a production set. You should be able to stay with your guests, your emotions and the rhythm of the day.</p>
+          <p data-i18n="approach.p2">My role is to observe, anticipate and preserve what is already there: real connection, natural movement, meaningful sound and atmosphere.</p>
+          <div class="trust-panel">
+            <h3 data-i18n="trust.title">Made for international weddings.</h3>
+            <ul class="trust-list">
+              <li data-i18n="trust.item1">Available in German, English and Chinese.</li>
+              <li data-i18n="trust.item2">Based in Germany, available across Europe.</li>
+              <li data-i18n="trust.item3">Suitable for castle, villa, intimate and destination weddings.</li>
+              <li data-i18n="trust.item4">A limited number of weddings accepted each year.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="faq" class="faq-section section-pad">
+      <div class="container faq-grid">
+        <div>
+          <div class="section-kicker" data-i18n="faq.kicker">FAQ</div>
+          <h2 class="section-title" data-i18n="faq.title">Before you enquire.</h2>
+        </div>
+        <div class="faq-list">
+          <div class="faq-item"><h3 data-i18n="faq.q1">Do we need a film if we already have a photographer?</h3><p data-i18n="faq.a1">Photography freezes the beauty of the day. Film preserves voice, movement, vows, speeches and atmosphere — the parts you can hear and feel again.</p></div>
+          <div class="faq-item"><h3 data-i18n="faq.q2">Will filming feel awkward or staged?</h3><p data-i18n="faq.a2">No. The approach is quiet and documentary-led, with minimal direction and no pressure to perform.</p></div>
+          <div class="faq-item"><h3 data-i18n="faq.q3">Do you travel?</h3><p data-i18n="faq.a3">Yes. I am based in Germany and available for weddings across Europe and beyond.</p></div>
+          <div class="faq-item"><h3 data-i18n="faq.q4">When should we enquire?</h3><p data-i18n="faq.a4">As early as possible, especially for summer weekends and destination weddings. I take on a limited number of weddings each year.</p></div>
+          <div class="faq-item"><h3 data-i18n="faq.q5">What do we receive?</h3><p data-i18n="faq.a5">Each collection is tailored to your day. Most couples enquire for full-day coverage, a cinematic highlight film and carefully edited memories.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="enquiry" class="enquiry section-pad">
+      <img class="enquiry-bg" src="https://images.unsplash.com/photo-1522673607200-164d1b6ce486?q=80&w=2200&auto=format&fit=crop" alt="Wedding hands detail background" />
+      <div class="container enquiry-inner">
+        <div class="enquiry-copy">
+          <div class="section-kicker" data-i18n="enquiry.kicker">Enquiry</div>
+          <h2 data-i18n="enquiry.title">Tell me about the day you are dreaming of.</h2>
+          <p data-i18n="enquiry.text">Where it happens, who will be there, and how you want it to feel. Share your plans, your story, and the atmosphere you hope to remember.</p>
+          <div class="investment-note">
+            <strong data-i18n="investment.title">An investment in memories that become more valuable with time.</strong>
+            <span data-i18n="investment.text">I accept a limited number of weddings each year so every film receives the attention it deserves. Share your date and location to request availability and an investment guide.</span>
+          </div>
+          <div class="contact-lines">
+            <span>hello@zqfilms.com</span>
+            <span data-i18n="trust.item1">Available in German, English and Chinese.</span>
+          </div>
+        </div>
+
+        <form class="form" action="mailto:hello@zqfilms.com" method="post" enctype="text/plain">
+          <div class="form-row">
+            <label for="name" data-i18n="form.name">Name</label>
+            <input id="name" name="Name" type="text" placeholder="Your full name" data-i18n-placeholder="form.namePlaceholder" required />
+          </div>
+          <div class="form-row">
+            <label for="email" data-i18n="form.email">Email</label>
+            <input id="email" name="Email" type="email" placeholder="you@example.com" data-i18n-placeholder="form.emailPlaceholder" required />
+          </div>
+          <div class="form-row">
+            <label for="date" data-i18n="form.date">Wedding date</label>
+            <input id="date" name="Wedding date" type="text" placeholder="DD / MM / YYYY" data-i18n-placeholder="form.datePlaceholder" />
+          </div>
+          <div class="form-row">
+            <label for="location" data-i18n="form.location">Location</label>
+            <input id="location" name="Location" type="text" placeholder="Venue, city, country" data-i18n-placeholder="form.locationPlaceholder" />
+          </div>
+          <div class="form-row">
+            <label for="guests" data-i18n="form.guests">Estimated guest count</label>
+            <input id="guests" name="Estimated guest count" type="text" placeholder="Approx. number of guests" data-i18n-placeholder="form.guestsPlaceholder" />
+          </div>
+          <div class="form-row">
+            <label for="coverage" data-i18n="form.coverage">Coverage interest</label>
+            <input id="coverage" name="Coverage interest" type="text" placeholder="Full day, ceremony only, multi-day, unsure" data-i18n-placeholder="form.coveragePlaceholder" />
+          </div>
+          <div class="form-row">
+            <label for="message" data-i18n="form.message">What matters most to you about your wedding film?</label>
+            <textarea id="message" name="Message" placeholder="Tell me about your wedding story, atmosphere, and what you hope to remember" data-i18n-placeholder="form.messagePlaceholder"></textarea>
+          </div>
+          <button class="btn btn-dark" type="submit" data-i18n="cta.sendEnquiry">Send Enquiry</button>
+        </form>
+      </div>
+
+      <div class="container footer-minimal">
+        <span>© 2026 ZQ Films</span>
+        <span data-i18n="footer.tagline">Wedding videographer based in Germany</span>
+      </div>
+    </section>
+  </main>
+  <script>
+    const translations = {
+      en: {
+        'nav.home': 'Home', 'nav.about': 'About', 'nav.films': 'Films', 'nav.faq': 'FAQ', 'nav.enquire': 'Enquire',
+        'hero.eyebrow': 'Germany · Europe · Worldwide', 'hero.title': 'Wedding films that remember how it felt.', 'hero.subtitle': 'For couples who want to remember not only how their wedding looked — but how it felt.',
+        'cta.viewFilms': 'View Films', 'cta.enquire': 'Enquire', 'cta.watchFilm': 'Watch Film', 'cta.sendEnquiry': 'Request Availability',
+        'about.kicker': 'About the videographer', 'about.title': 'I do not simply film what happens.', 'about.lead': 'I capture how it felt.',
+        'about.p1': 'ZQ Films is a personal wedding videography brand based in Germany, created for couples who value feeling over perfection. My work blends documentary honesty with cinematic beauty, preserving not only how your day looked, but how it moved, sounded, and stayed with you.',
+        'about.p2': 'I look for quiet gestures, glances before the ceremony, laughter that breaks tension, unplanned tears, and the rhythm that makes your celebration uniquely yours.',
+        'about.point1Title': 'Real emotions', 'about.point1Text': 'Unstaged moments, honest expressions, and natural energy between people.', 'about.point2Title': 'Cinematic beauty', 'about.point2Text': 'Elegant framing, atmosphere, music, and pacing shaped into a timeless film.',
+        'why.kicker': 'Why film', 'why.title': 'Photography shows how it looked. Film brings back how it felt.', 'why.text': 'A wedding film preserves the things photographs cannot hold on their own: your voices, vows, laughter, the sound of your families, the music, the movement, and the atmosphere of the day.',
+        'why.item1Title': 'Voices & vows', 'why.item1Text': 'The words, pauses and emotions that become more meaningful with time.', 'why.item2Title': 'Natural, not staged', 'why.item2Text': 'A quiet filming approach that lets you stay present with your people.', 'why.item3Title': 'Long-term memory', 'why.item3Text': 'A film becomes more valuable as the day moves further into the past.',
+        'films.kicker': 'Selected films', 'films.title': 'Stories that feel like cinema.', 'films.intro': 'Each selected film is presented like a hero scene: a 16:9 cinematic frame, a quote, a place, and the feeling that stayed after the day ended.',
+        'film1.tag1': 'Destination Wedding', 'film1.tag2': 'Full Day Coverage', 'film1.tag3': 'Emotional Documentary', 'film1.quote': '“Like watching a movie.”', 'film1.cite': 'Iris & Pedro · Villa Astor, Sorrento, Italy', 'film1.title': 'Villa Astor', 'film1.location': 'Sorrento, Italy', 'film1.description': 'A Mediterranean wedding film shaped by soft light, elegant silence, and the feeling of two people fully present with each other.',
+        'film2.tag1': 'Castle Wedding', 'film2.tag2': 'France', 'film2.tag3': 'Candlelight Story', 'film2.quote': '“We felt everything again.”', 'film2.cite': 'Elise & Marc · Château Vieux, Bordeaux, France', 'film2.title': 'Château Vieux', 'film2.location': 'Bordeaux, France', 'film2.description': 'A delicate story of glances, candlelight, old stone arches, and laughter that moved softly through the evening.',
+        'film3.tag1': 'Alpine Wedding', 'film3.tag2': 'Germany', 'film3.tag3': 'Intimate Celebration', 'film3.quote': '“It brought us back to that day.”', 'film3.cite': 'Sofia & Lukas · Alpine Vows, Bavaria, Germany', 'film3.title': 'Alpine Vows', 'film3.location': 'Bavaria, Germany', 'film3.description': 'Crisp mountain air, whispered promises, and the gentle rhythm of nature framing a celebration with quiet depth.',
+        'approach.kicker': 'Approach', 'approach.title': 'Present, but never intrusive.', 'approach.p1': 'I film quietly and intuitively, without turning your wedding into a production set. You should be able to stay with your guests, your emotions and the rhythm of the day.', 'approach.p2': 'My role is to observe, anticipate and preserve what is already there: real connection, natural movement, meaningful sound and atmosphere.',
+        'trust.title': 'Made for international weddings.', 'trust.item1': 'Available in German, English and Chinese.', 'trust.item2': 'Based in Germany, available across Europe.', 'trust.item3': 'Suitable for castle, villa, intimate and destination weddings.', 'trust.item4': 'A limited number of weddings accepted each year.',
+        'faq.kicker': 'FAQ', 'faq.title': 'Before you enquire.', 'faq.q1': 'Do we need a film if we already have a photographer?', 'faq.a1': 'Photography freezes the beauty of the day. Film preserves voice, movement, vows, speeches and atmosphere — the parts you can hear and feel again.', 'faq.q2': 'Will filming feel awkward or staged?', 'faq.a2': 'No. The approach is quiet and documentary-led, with minimal direction and no pressure to perform.', 'faq.q3': 'Do you travel?', 'faq.a3': 'Yes. I am based in Germany and available for weddings across Europe and beyond.', 'faq.q4': 'When should we enquire?', 'faq.a4': 'As early as possible, especially for summer weekends and destination weddings. I take on a limited number of weddings each year.', 'faq.q5': 'What do we receive?', 'faq.a5': 'Each collection is tailored to your day. Most couples enquire for full-day coverage, a cinematic highlight film and carefully edited memories.',
+        'investment.title': 'An investment in memories that become more valuable with time.', 'investment.text': 'I accept a limited number of weddings each year so every film receives the attention it deserves. Share your date and location to request availability and an investment guide.',
+        'enquiry.kicker': 'Enquiry', 'enquiry.title': 'Tell me about your wedding.', 'enquiry.text': 'Where it happens, who will be there, and how you want it to feel. Share your plans, your story, and the atmosphere you hope to remember.',
+        'form.name': 'Name', 'form.email': 'Email', 'form.date': 'Wedding date', 'form.location': 'Location', 'form.guests': 'Estimated guest count', 'form.coverage': 'Coverage interest', 'form.message': 'What matters most to you about your wedding film?',
+        'form.namePlaceholder': 'Your full name', 'form.emailPlaceholder': 'you@example.com', 'form.datePlaceholder': 'DD / MM / YYYY', 'form.locationPlaceholder': 'Venue, city, country', 'form.guestsPlaceholder': 'Approx. number of guests', 'form.coveragePlaceholder': 'Full day, ceremony only, multi-day, unsure', 'form.messagePlaceholder': 'Tell me about your wedding story, atmosphere, and what you hope to remember', 'footer.tagline': 'Wedding videographer based in Germany'
+      },
+      de: {
+        'nav.home': 'Start', 'nav.about': 'Über mich', 'nav.films': 'Filme', 'nav.faq': 'FAQ', 'nav.enquire': 'Anfrage',
+        'hero.eyebrow': 'Deutschland · Europa · Weltweit', 'hero.title': 'Hochzeitsfilme, die festhalten, wie es sich angefühlt hat.', 'hero.subtitle': 'Für Paare, die nicht nur sehen möchten, wie ihr Hochzeitstag aussah — sondern wieder fühlen möchten, wie er war.',
+        'cta.viewFilms': 'Filme ansehen', 'cta.enquire': 'Anfragen', 'cta.watchFilm': 'Film ansehen', 'cta.sendEnquiry': 'Verfügbarkeit anfragen',
+        'about.kicker': 'Über den Hochzeitsvideografen', 'about.title': 'Ich filme nicht nur, was passiert.', 'about.lead': 'Ich halte fest, wie es sich angefühlt hat.',
+        'about.p1': 'ZQ Films ist ein persönliche Hochzeitsvideografie-Marke mit Sitz in Deutschland, geschaffen für Paare, denen Gefühl wichtiger ist als Perfektion. Meine Arbeit verbindet dokumentarische Echtheit mit filmischer Schönheit.', 'about.p2': 'Ich suche nach leisen Gesten, Blicken vor der Zeremonie, Lachen, unerwarteten Tränen und dem Rhythmus, der eure Feier einzigartig macht.',
+        'about.point1Title': 'Echte Emotionen', 'about.point1Text': 'Uninszenierte Momente, ehrliche Ausdrücke und die natürliche Energie zwischen Menschen.', 'about.point2Title': 'Filmische Schönheit', 'about.point2Text': 'Elegante Bildgestaltung, Atmosphäre, Musik und Rhythmus, geformt zu einem zeitlosen Film.',
+        'why.kicker': 'Warum Film', 'why.title': 'Fotos zeigen, wie es aussah. Ein Film bringt zurück, wie es sich angefühlt hat.', 'why.text': 'Ein Hochzeitsfilm bewahrt, was Fotos allein nicht festhalten können: eure Stimmen, Gelübde, Lachen, die Worte eurer Familien, Musik, Bewegung und die Atmosphäre des Tages.',
+        'why.item1Title': 'Stimmen & Gelübde', 'why.item1Text': 'Worte, Pausen und Emotionen, die mit der Zeit noch bedeutungsvoller werden.', 'why.item2Title': 'Natürlich, nicht gestellt', 'why.item2Text': 'Eine ruhige Arbeitsweise, damit ihr bei euren Menschen und Gefühlen bleiben könnt.', 'why.item3Title': 'Langfristige Erinnerung', 'why.item3Text': 'Ein Film wird wertvoller, je weiter der Tag in die Vergangenheit rückt.',
+        'films.kicker': 'Ausgewählte Filme', 'films.title': 'Geschichten, die sich wie Kino anfühlen.', 'films.intro': 'Jeder Film erscheint wie eine eigene Szene: ein 16:9-Kinobild, ein Zitat, ein Ort und das Gefühl, das bleibt.',
+        'film1.tag1': 'Destination Wedding', 'film1.tag2': 'Ganztagesbegleitung', 'film1.tag3': 'Emotionale Doku', 'film1.quote': '„Wie ein echter Film.“', 'film1.cite': 'Iris & Pedro · Villa Astor, Sorrento, Italien', 'film1.title': 'Villa Astor', 'film1.location': 'Sorrento, Italien', 'film1.description': 'Ein mediterraner Hochzeitsfilm voller weichem Licht, eleganter Stille und echter Nähe.',
+        'film2.tag1': 'Schlosshochzeit', 'film2.tag2': 'Frankreich', 'film2.tag3': 'Kerzenlicht', 'film2.quote': '„Wir haben alles noch einmal gefühlt.“', 'film2.cite': 'Elise & Marc · Château Vieux, Bordeaux, Frankreich', 'film2.title': 'Château Vieux', 'film2.location': 'Bordeaux, Frankreich', 'film2.description': 'Eine zarte Geschichte aus Blicken, Kerzenlicht, alten Steinbögen und leisem Lachen.',
+        'film3.tag1': 'Alpenhochzeit', 'film3.tag2': 'Deutschland', 'film3.tag3': 'Intime Feier', 'film3.quote': '„Es hat uns direkt an diesen Tag zurückgebracht.“', 'film3.cite': 'Sofia & Lukas · Alpine Vows, Bayern, Deutschland', 'film3.title': 'Alpine Vows', 'film3.location': 'Bayern, Deutschland', 'film3.description': 'Klare Bergluft, leise Versprechen und die ruhige Kraft der Natur als Rahmen ihrer Feier.',
+        'approach.kicker': 'Arbeitsweise', 'approach.title': 'Nah dran, aber nie aufdringlich.', 'approach.p1': 'Ich filme ruhig und intuitiv, ohne eure Hochzeit in ein Filmset zu verwandeln. Ihr sollt bei euren Gästen, euren Gefühlen und dem Rhythmus des Tages bleiben können.', 'approach.p2': 'Meine Aufgabe ist es, zu beobachten, vorauszusehen und zu bewahren, was bereits da ist: echte Verbindung, natürliche Bewegung, bedeutungsvoller Klang und Atmosphäre.',
+        'trust.title': 'Gemacht für internationale Hochzeiten.', 'trust.item1': 'Begleitung auf Deutsch, Englisch und Chinesisch möglich.', 'trust.item2': 'Mit Sitz in Deutschland, europaweit verfügbar.', 'trust.item3': 'Geeignet für Schloss-, Villa-, intime und Destination Weddings.', 'trust.item4': 'Ich begleite nur eine begrenzte Anzahl an Hochzeiten pro Jahr.',
+        'faq.kicker': 'FAQ', 'faq.title': 'Vor eurer Anfrage.', 'faq.q1': 'Brauchen wir einen Film, wenn wir schon einen Fotografen haben?', 'faq.a1': 'Fotografie hält die Schönheit fest. Film bewahrt Stimmen, Bewegung, Gelübde, Reden und Atmosphäre — das, was ihr wieder hören und fühlen könnt.', 'faq.q2': 'Wird das Filmen unangenehm oder gestellt sein?', 'faq.a2': 'Nein. Die Arbeitsweise ist ruhig und dokumentarisch, mit minimaler Anleitung und ohne Druck, etwas darstellen zu müssen.', 'faq.q3': 'Reist du auch?', 'faq.a3': 'Ja. Ich habe meinen Sitz in Deutschland und begleite Hochzeiten in Europa und darüber hinaus.', 'faq.q4': 'Wann sollten wir anfragen?', 'faq.a4': 'So früh wie möglich, besonders für Sommerwochenenden und Destination Weddings. Ich nehme nur eine begrenzte Anzahl an Hochzeiten pro Jahr an.', 'faq.q5': 'Was erhalten wir?', 'faq.a5': 'Jede Begleitung wird auf euren Tag abgestimmt. Viele Paare fragen eine Ganztagesbegleitung, einen filmischen Highlightfilm und sorgfältig editierte Erinnerungen an.',
+        'investment.title': 'Eine Investition in Erinnerungen, die mit der Zeit wertvoller werden.', 'investment.text': 'Ich begleite nur eine begrenzte Anzahl an Hochzeiten pro Jahr, damit jeder Film die Aufmerksamkeit bekommt, die er verdient. Sendet mir Datum und Ort, um Verfügbarkeit und Investment Guide anzufragen.',
+        'enquiry.kicker': 'Anfrage', 'enquiry.title': 'Erzählt mir von eurer Hochzeit.', 'enquiry.text': 'Wo sie stattfinden wird, wer dabei sein wird und wie sie sich anfühlen soll. Teilt eure Pläne, eure Geschichte und die Atmosphäre, die ihr bewahren möchtet.',
+        'form.name': 'Name', 'form.email': 'E-Mail', 'form.date': 'Hochzeitsdatum', 'form.location': 'Ort', 'form.guests': 'Geschätzte Gästezahl', 'form.coverage': 'Gewünschte Begleitung', 'form.message': 'Was ist euch bei eurem Hochzeitsfilm am wichtigsten?',
+        'form.namePlaceholder': 'Euer vollständiger Name', 'form.emailPlaceholder': 'ihr@example.com', 'form.datePlaceholder': 'TT / MM / JJJJ', 'form.locationPlaceholder': 'Location, Stadt, Land', 'form.guestsPlaceholder': 'Ungefähre Gästezahl', 'form.coveragePlaceholder': 'Ganztag, nur Zeremonie, mehrere Tage, noch unsicher', 'form.messagePlaceholder': 'Erzählt mir von eurer Hochzeit, der Atmosphäre und was ihr bewahren möchtet', 'footer.tagline': 'Hochzeitsvideograf mit Sitz in Deutschland'
+      },
+      zh: {
+        'nav.home': '首页', 'nav.about': '关于我', 'nav.films': '作品', 'nav.faq': 'FAQ', 'nav.enquire': '咨询',
+        'hero.eyebrow': '德国 · 欧洲 · 全球', 'hero.title': '记录婚礼那一天真正的感受。', 'hero.subtitle': '为那些不只想看到婚礼样子，也想重新感受那一天的新人而创作。',
+        'cta.viewFilms': '观看作品', 'cta.enquire': '联系咨询', 'cta.watchFilm': '观看影片', 'cta.sendEnquiry': '咨询档期',
+        'about.kicker': '关于婚礼摄像师', 'about.title': '我不只是拍摄发生了什么。', 'about.lead': '我记录的是那一天的感受。', 'about.p1': 'ZQ Films 是一个常驻德国的个人婚礼摄像品牌，为重视情绪与审美的新人创作婚礼影像。我的作品将纪录片式真实与电影化美感结合，保留的不只是画面，还有那一天的氛围、节奏和心动。', 'about.p2': '我关注那些安静的动作、仪式前的眼神、打破紧张的笑声、没有预设的眼泪，以及让你们的婚礼真正独特的情绪节奏。',
+        'about.point1Title': '真实情绪', 'about.point1Text': '不刻意摆拍，捕捉自然表情和人与人之间真实的能量。', 'about.point2Title': '电影美感', 'about.point2Text': '用构图、氛围、音乐和节奏，把真实婚礼塑造成值得珍藏的电影。',
+        'why.kicker': '为什么需要影片', 'why.title': '照片记录样子，影片带回感受。', 'why.text': '婚礼电影能保留照片无法完整承载的内容：你们的声音、誓言、笑声、家人的讲话、音乐、动作以及婚礼当天的氛围。',
+        'why.item1Title': '声音与誓言', 'why.item1Text': '那些语言、停顿和情绪，会随着时间变得越来越珍贵。', 'why.item2Title': '自然，不摆拍', 'why.item2Text': '安静的拍摄方式，让你们真正享受婚礼和身边的人。', 'why.item3Title': '长期记忆', 'why.item3Text': '婚礼过去越久，影片的价值越会被感受到。',
+        'films.kicker': '精选影片', 'films.title': '像电影一样被记住的故事。', 'films.intro': '每一部精选影片都像一个 16:9 的电影场景：一句评价、一个地点，以及婚礼结束后依然留下的感受。',
+        'film1.tag1': '目的地婚礼', 'film1.tag2': '全天拍摄', 'film1.tag3': '情绪纪录', 'film1.quote': '“像在看一部电影。”', 'film1.cite': 'Iris & Pedro · Villa Astor，意大利索伦托', 'film1.title': 'Villa Astor', 'film1.location': '意大利索伦托', 'film1.description': '一部充满地中海光线、安静优雅与亲密情绪的婚礼电影。',
+        'film2.tag1': '城堡婚礼', 'film2.tag2': '法国', 'film2.tag3': '烛光故事', 'film2.quote': '“我们又重新感受了一遍那一天。”', 'film2.cite': 'Elise & Marc · Château Vieux，法国波尔多', 'film2.title': 'Château Vieux', 'film2.location': '法国波尔多', 'film2.description': '眼神、烛光、古老石墙和轻柔笑声交织成的婚礼故事。',
+        'film3.tag1': '阿尔卑斯婚礼', 'film3.tag2': '德国', 'film3.tag3': '亲密庆典', 'film3.quote': '“它把我们带回了婚礼那天。”', 'film3.cite': 'Sofia & Lukas · Alpine Vows，德国巴伐利亚', 'film3.title': 'Alpine Vows', 'film3.location': '德国巴伐利亚', 'film3.description': '清澈山风、轻声誓言和自然节奏共同包围的一场婚礼。',
+        'approach.kicker': '拍摄方式', 'approach.title': '靠近现场，但不打扰你们。', 'approach.p1': '我会安静、直觉地拍摄，不把婚礼变成片场。你们应该留在自己的情绪、亲友和当天的节奏里。', 'approach.p2': '我的角色是观察、预判并保存已经存在的真实连接、自然动作、声音和氛围。',
+        'trust.title': '适合国际婚礼。', 'trust.item1': '可使用德语、英语和中文沟通。', 'trust.item2': '常驻德国，可拍摄欧洲婚礼。', 'trust.item3': '适合城堡、庄园、亲密型和目的地婚礼。', 'trust.item4': '每年只接受有限数量的婚礼拍摄。',
+        'faq.kicker': 'FAQ', 'faq.title': '咨询前你可能想知道。', 'faq.q1': '已经有摄影师，还需要婚礼影片吗？', 'faq.a1': '照片定格美丽画面，影片保留声音、动作、誓言、讲话和氛围，也就是多年后能重新听见和感受到的部分。', 'faq.q2': '拍摄会不会尴尬或很摆拍？', 'faq.a2': '不会。拍摄方式以安静纪录为主，只做很少引导，不会让你们有表演压力。', 'faq.q3': '你会去外地或欧洲其他国家拍摄吗？', 'faq.a3': '会。我常驻德国，可拍摄欧洲及更广范围的婚礼。', 'faq.q4': '应该提前多久咨询？', 'faq.a4': '越早越好，尤其是夏季周末和目的地婚礼。我每年只接有限数量的婚礼。', 'faq.q5': '最终会收到什么？', 'faq.a5': '每场婚礼都会根据当天情况定制。多数新人会咨询全天拍摄、电影感 highlight film 和精心剪辑的婚礼记忆。',
+        'investment.title': '这是一份会随着时间越来越珍贵的记忆投资。', 'investment.text': '我每年只接受有限数量的婚礼拍摄，让每一部影片都得到足够的创作时间。请分享日期和地点，以便咨询档期和定制报价。',
+        'enquiry.kicker': '咨询', 'enquiry.title': '告诉我你们的婚礼。', 'enquiry.text': '它会在哪里发生，会有哪些人在场，以及你希望它是什么感觉。分享你们的计划、故事和想要保留下来的氛围。',
+        'form.name': '姓名', 'form.email': '邮箱', 'form.date': '婚礼日期', 'form.location': '地点', 'form.guests': '预计人数', 'form.coverage': '拍摄需求', 'form.message': '你们最希望婚礼影片保留什么？',
+        'form.namePlaceholder': '你的姓名', 'form.emailPlaceholder': 'you@example.com', 'form.datePlaceholder': '日 / 月 / 年', 'form.locationPlaceholder': '场地、城市、国家', 'form.guestsPlaceholder': '大概宾客人数', 'form.coveragePlaceholder': '全天、只拍仪式、多日婚礼、还不确定', 'form.messagePlaceholder': '告诉我你们的婚礼故事、氛围和想保留下来的感受', 'footer.tagline': '常驻德国的婚礼摄像师'
+      }
+    };
+
+    function getDefaultLanguage() {
+      const saved = localStorage.getItem('zqfilms_lang');
+      if (saved && translations[saved]) return saved;
+      const browserLang = (navigator.language || navigator.userLanguage || 'en').toLowerCase();
+      if (browserLang.startsWith('de')) return 'de';
+      if (browserLang.startsWith('zh')) return 'zh';
+      return 'en';
+    }
+
+    function applyLanguage(lang) {
+      const dict = translations[lang] || translations.en;
+      document.documentElement.lang = lang === 'zh' ? 'zh-CN' : lang;
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        if (dict[key]) el.textContent = dict[key];
+      });
+      document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+        const key = el.getAttribute('data-i18n-placeholder');
+        if (dict[key]) el.setAttribute('placeholder', dict[key]);
+      });
+      document.querySelectorAll('.lang-btn').forEach(btn => {
+        btn.classList.toggle('active', btn.dataset.lang === lang);
+      });
+      localStorage.setItem('zqfilms_lang', lang);
+    }
+
+    document.querySelectorAll('.lang-btn').forEach(btn => btn.addEventListener('click', () => applyLanguage(btn.dataset.lang)));
+    applyLanguage(getDefaultLanguage());
+
+    const links = document.querySelectorAll('.nav-links a');
+    const sections = [...links].map(link => document.querySelector(link.getAttribute('href')));
+
+    function setActiveNav() {
+      const y = window.scrollY + 120;
+      let activeIndex = 0;
+      sections.forEach((section, index) => {
+        if (section && y >= section.offsetTop) activeIndex = index;
+      });
+      links.forEach(link => link.classList.remove('active'));
+      links[activeIndex]?.classList.add('active');
+    }
+
+    window.addEventListener('scroll', setActiveNav, { passive: true });
+    setActiveNav();
+
+    const heroVideo = document.querySelector('.hero-video');
+    if (heroVideo) {
+      heroVideo.muted = true;
+      heroVideo.play().catch(() => {});
+    }
+
+    const filmVideos = document.querySelectorAll('.film-bg-video');
+    const filmObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        const video = entry.target;
+        if (entry.isIntersecting) video.play().catch(() => {});
+        else video.pause();
+      });
+    }, { threshold: 0.45 });
+    filmVideos.forEach(video => filmObserver.observe(video));
+  </script>
+</body>
+</html>

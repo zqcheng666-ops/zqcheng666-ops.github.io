@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ZQ Films | Wedding Videographer in Germany</title>
+  <meta name="description" content="Germany-based wedding videographer crafting honest, emotional and cinematic wedding stories across Europe and beyond." />
+
+  <!-- Fonts: Cormorant Garamond (Serif) & Inter (Sans)[cite: 1] -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --ivory: #f8f4ec;
+      --warm-white: #fffdf8;
+      --beige: #e7ddce;
+      --taupe: #8f8275;
+      --champagne: #c8ad7f;
+      --charcoal: #1c1b19;
+      --soft-black: #11100f;
+      --muted: #6e6a65;
+      --line: rgba(28, 27, 25, 0.12);
+      --max: 1240px; /* 略微拓宽视野 */
+      --ease: cubic-bezier(.22, .61, .36, 1);[cite: 1]
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }[cite: 1]
+
+    body {
+      font-family: "Inter", sans-serif;[cite: 1]
+      color: var(--charcoal);
+      background: var(--warm-white);
+      line-height: 1.8;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* --- 滚动入场动画样式 --- */
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 1.2s var(--ease), transform 1.2s var(--ease);
+    }
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    img, video { width: 100%; display: block; object-fit: cover; }[cite: 1]
+    a { color: inherit; text-decoration: none; transition: opacity .3s ease; }
+    a:hover { opacity: 0.8; }
+
+    .container { width: min(var(--max), calc(100% - 60px)); margin: 0 auto; }
+
+    /* --- Header & Mobile Nav --- */
+    .site-header {
+      position: fixed; top: 0; left: 0; width: 100%; height: 80px;
+      z-index: 1000; background: rgba(255, 253, 248, 0.8);
+      backdrop-filter: blur(20px); border-bottom: 1px solid var(--line);
+    }
+    .nav { height: 100%; display: flex; align-items: center; justify-content: space-between; }
+    .logo { width: 160px; z-index: 1001; }
+    .logo img { width: 100%; height: auto; }
+
+    /* PC 端导航 */
+    .nav-links { display: flex; gap: 32px; font-size: .75rem; letter-spacing: .15em; text-transform: uppercase; }[cite: 1]
+    .nav-links a { position: relative; padding: 8px 0; font-weight: 500; }
+    .nav-links a::after {
+      content: ""; position: absolute; left: 0; bottom: 0;
+      width: 0; height: 1px; background: var(--charcoal);
+      transition: width .4s var(--ease);
+    }
+    .nav-links a:hover::after, .nav-links a.active::after { width: 100%; }[cite: 1]
+
+    /* 移动端汉堡菜单按钮 */
+    .menu-toggle {
+      display: none; width: 30px; height: 20px;
+      flex-direction: column; justify-content: space-between;
+      cursor: pointer; z-index: 1001; background: none; border: none;
+    }
+    .menu-toggle span { width: 100%; height: 1px; background: var(--charcoal); transition: .4s var(--ease); }
+
+    /* --- Hero Section --- */
+    .hero {
+      height: 100vh; position: relative; overflow: hidden;
+      display: flex; align-items: center; background: var(--charcoal); color: #fff;
+    }
+    .hero-video { position: absolute; inset: 0; opacity: 0.7; z-index: 0; }[cite: 1]
+    .hero::before {
+      content: ""; position: absolute; inset: 0; z-index: 1;
+      background: radial-gradient(circle, transparent 20%, rgba(0,0,0,0.4) 100%);
+    }
+    .hero-content { position: relative; z-index: 2; max-width: 800px; }
+    .eyebrow { font-size: .7rem; letter-spacing: .3em; text-transform: uppercase; color: rgba(255,255,255,0.7); margin-bottom: 30px; }[cite: 1]
+    
+    h1, h2, h3 { font-family: "Cormorant Garamond", serif; font-weight: 500; line-height: 1.1; }[cite: 1]
+    h1 { font-size: clamp(3rem, 6vw, 6rem); letter-spacing: -0.03em; margin-bottom: 30px; }[cite: 1]
+    .hero p { max-width: 500px; font-size: 1rem; color: rgba(255,255,255,0.8); line-height: 1.8; }[cite: 1]
+
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center;
+      padding: 14px 34px; border-radius: 100px; border: 1px solid currentColor;
+      font-size: .7rem; letter-spacing: .15em; text-transform: uppercase;
+      transition: all .4s var(--ease); cursor: pointer; background: transparent;
+    }
+    .btn-light { color: #fff; border-color: rgba(255,255,255,0.3); backdrop-filter: blur(10px); }
+    .btn-light:hover { background: #fff; color: var(--charcoal); }
+    .btn-dark { color: var(--charcoal); border-color: var(--line); }
+    .btn-dark:hover { background: var(--charcoal); color: #fff; }
+
+    /* --- Section Styling --- */
+    .section-pad { padding: 160px 0; }[cite: 1]
+    .section-kicker { 
+      font-family: "Cormorant Garamond", serif; font-style: italic; font-size: 1.2rem;
+      color: var(--taupe); margin-bottom: 25px; 
+    }
+    .section-title { font-size: clamp(2.5rem, 5vw, 4.5rem); letter-spacing: -0.04em; margin-bottom: 40px; }[cite: 1]
+
+    /* --- About Grid --- */
+    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 100px; align-items: center; }[cite: 1]
+    .about-media { position: relative; padding-right: 40px; }
+    .portrait-main { border-radius: 2px; overflow: hidden; box-shadow: 0 40px 100px rgba(0,0,0,0.05); }[cite: 1]
+    .about-copy .lead { font-family: "Cormorant Garamond", serif; font-style: italic; font-size: 2.2rem; margin-bottom: 30px; }[cite: 1]
+
+    /* --- Film Features --- */
+    .film-list { display: grid; gap: 120px; }[cite: 1]
+    .film-preview {
+      position: relative; aspect-ratio: 16 / 9; overflow: hidden;
+      background: var(--charcoal); border-radius: 4px;
+    }
+    .film-preview video { transition: transform 1.8s var(--ease); }
+    .film-feature:hover .film-preview video { transform: scale(1.05); }[cite: 1]
+    .film-overlay {
+      position: absolute; inset: 0; z-index: 2; padding: 60px;
+      display: flex; flex-direction: column; justify-content: flex-end;
+      background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, transparent 60%);
+      color: #fff;
+    }
+    .film-overlay blockquote { font-family: "Cormorant Garamond", serif; font-size: 3.5rem; line-height: 1; margin-bottom: 20px; }[cite: 1]
+    .play-mark {
+      position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+      width: 100px; height: 100px; border: 1px solid rgba(255,255,255,0.4);
+      border-radius: 50%; display: grid; place-items: center; backdrop-filter: blur(5px);
+      transition: all .5s var(--ease);
+    }
+    .film-feature:hover .play-mark { transform: translate(-50%, -50%) scale(1.1); background: rgba(255,255,255,0.1); }[cite: 1]
+
+    /* --- Form Styling --- */
+    .form { background: #fff; padding: 60px; border-radius: 4px; border: 1px solid var(--line); }[cite: 1]
+    .form-row { margin-bottom: 30px; }
+    input, textarea {
+      width: 100%; border: none; border-bottom: 1px solid var(--line);
+      padding: 15px 0; font-family: inherit; font-size: 1rem; outline: none;
+      transition: border-color .3s ease; background: transparent;
+    }
+    input:focus { border-color: var(--charcoal); }
+
+    /* --- Responsive & Mobile Menu --- */
+    @media (max-width: 980px) {
+      .nav-links { display: none; } /* 隐藏 PC 导航 */
+      .menu-toggle { display: flex; } /* 显示汉堡按钮 */
+      
+      .nav-links.mobile-open {
+        display: flex; position: fixed; inset: 0; height: 100vh;
+        background: var(--warm-white); flex-direction: column;
+        justify-content: center; align-items: center; gap: 40px;
+        z-index: 1000; animation: fadeIn .5s forwards;
+      }
+      .nav-links.mobile-open a { font-size: 1.5rem; }
+
+      .about-grid { grid-template-columns: 1fr; gap: 60px; }[cite: 1]
+      .section-pad { padding: 100px 0; }
+    }
+
+    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+  </style>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container nav">
+      <a href="#home" class="logo" aria-label="ZQ Films Home">
+        <!-- 请替换为你的 Logo[cite: 1] -->
+        <img src="assets/zq-films-logo.png" alt="ZQ Films" />
+      </a>
+      
+      <div class="nav-right">
+        <nav class="nav-links" id="mainNav" aria-label="Main navigation">
+          <a href="#home" class="active" data-i18n="nav.home">Home</a>
+          <a href="#about" data-i18n="nav.about">About</a>
+          <a href="#films" data-i18n="nav.films">Films</a>
+          <a href="#faq" data-i18n="nav.faq">FAQ</a>
+          <a href="#enquiry" data-i18n="nav.enquire">Enquire</a>
+        </nav>
+        
+        <button class="menu-toggle" id="menuBtn" aria-label="Toggle Menu">
+          <span></span><span></span>
+        </button>
+      </div>
+
+      <div class="language-switcher" style="display: flex; gap: 10px;">
+        <button class="lang-btn" data-lang="en">EN</button>
+        <button class="lang-btn" data-lang="de">DE</button>
+        <button class="lang-btn" data-lang="zh">中文</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section id="home" class="hero">
+      <video class="hero-video" autoplay muted loop playsinline poster="assets/hero-poster.jpg">[cite: 1]
+        <source src="assets/hero-wedding-reel.mp4" type="video/mp4" />
+      </video>
+      <div class="container hero-content reveal">
+        <div class="eyebrow" data-i18n="hero.eyebrow">Germany · Europe · Worldwide</div>
+        <h1 data-i18n="hero.title">Wedding films that remember how it felt.</h1>[cite: 1]
+        <p data-i18n="hero.subtitle">Capturing honest, emotional stories across Europe and beyond.</p>
+        <div style="margin-top: 40px; display: flex; gap: 20px;">
+          <a href="#films" class="btn btn-light" data-i18n="cta.viewFilms">View Films</a>
+          <a href="#enquiry" class="btn btn-light" data-i18n="cta.enquire">Enquire</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="section-pad">
+      <div class="container about-grid">
+        <div class="about-media reveal">
+          <div class="portrait-main">
+            <img src="https://images.unsplash.com/photo-1532712938310-34cb3982ef74?q=80&w=1400&auto=format&fit=crop" alt="Working" />
+          </div>
+        </div>
+        <div class="about-copy reveal">
+          <div class="section-kicker" data-i18n="about.kicker">The Art of Storytelling</div>
+          <h2 class="section-title" data-i18n="about.title">I do not simply film what happens.</h2>
+          <p class="lead" data-i18n="about.lead">I capture the feeling.</p>[cite: 1]
+          <p data-i18n="about.p1">Based in Germany, ZQ Films blends documentary honesty with cinematic beauty.</p>[cite: 1]
+        </div>
+      </div>
+    </section>
+
+    <section id="films" class="section-pad" style="background: var(--ivory);">
+      <div class="container">
+        <div class="reveal" style="text-align: center; margin-bottom: 80px;">
+          <div class="section-kicker" data-i18n="films.kicker">Selected Works</div>
+          <h2 class="section-title" data-i18n="films.title">Stories that feel like cinema.</h2>[cite: 1]
+        </div>
+
+        <div class="film-list">
+          <!-- 影片项 1 -->
+          <article class="film-feature reveal">
+            <a href="#enquiry" class="film-preview">
+              <video class="film-bg-video" muted loop playsinline preload="none" poster="assets/film1-poster.jpg">
+                <source src="assets/villa-astor-preview.mp4" type="video/mp4" />
+              </video>
+              <div class="film-overlay">
+                <blockquote data-i18n="film1.quote">“Like watching a movie.”</blockquote>[cite: 1]
+                <h3 data-i18n="film1.title">Villa Astor</h3>
+                <span class="btn btn-light" style="width: fit-content;" data-i18n="cta.watchFilm">Watch Film</span>
+              </div>
+              <div class="play-mark"></div>
+            </a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="enquiry" class="section-pad">
+      <div class="container reveal">
+        <div style="max-width: 700px; margin: 0 auto;">
+          <div style="text-align: center; margin-bottom: 60px;">
+            <h2 class="section-title" data-i18n="enquiry.title">Let’s tell your story.</h2>[cite: 1]
+          </div>
+          <form class="form">
+            <div class="form-row">
+              <input type="text" placeholder="Your Name" data-i18n-placeholder="form.namePlaceholder" required>
+            </div>
+            <div class="form-row">
+              <input type="email" placeholder="Your Email" data-i18n-placeholder="form.emailPlaceholder" required>
+            </div>
+            <div class="form-row">
+              <textarea placeholder="Tell me about your wedding..." data-i18n-placeholder="form.messagePlaceholder" rows="5"></textarea>
+            </div>
+            <button type="submit" class="btn btn-dark" style="width: 100%;" data-i18n="cta.sendEnquiry">Send Request</button>[cite: 1]
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    // 1. 滚动入场动画逻辑 (Intersection Observer)
+    const revealCallback = (entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('active');
+        }
+      });
+    };
+    const observer = new IntersectionObserver(revealCallback, { threshold: 0.1 });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    // 2. 移动端菜单切换
+    const menuBtn = document.getElementById('menuBtn');
+    const mainNav = document.getElementById('mainNav');
+    menuBtn.addEventListener('click', () => {
+      mainNav.classList.toggle('mobile-open');
+      menuBtn.style.transform = mainNav.classList.contains('mobile-open') ? 'rotate(90deg)' : 'none';
+    });
+
+    // 3. 视频按需播放 (节省性能)[cite: 1]
+    const videoObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.play();
+        else entry.target.pause();
+      });
+    }, { threshold: 0.5 });
+    document.querySelectorAll('video').forEach(v => videoObserver.observe(v));
+
+    // 4. 多语言逻辑 (保留你原本的 translations 对象)[cite: 1]
+    // ... 此处省略 translation 数据，请将你原始代码中的 translations 对象粘贴在此处 ...
+  </script>
+</body>
+</html>

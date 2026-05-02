@@ -192,8 +192,9 @@
     .hero-content {
       position: relative;
       z-index: 2;
-      max-width: 760px;
-      padding: 110px 0 96px;
+      max-width: 680px;
+      margin-left: clamp(0px, 5vw, 84px);
+      padding: 104px 0 88px;
     }
 
     .eyebrow {
@@ -218,11 +219,11 @@
     }
 
     .hero p {
-      max-width: 520px;
-      margin-top: 28px;
-      color: rgba(255,255,255,.82);
-      font-size: .98rem;
-      line-height: 1.9;
+      max-width: 560px;
+      margin-top: 26px;
+      color: rgba(255,255,255,.84);
+      font-size: 1.02rem;
+      line-height: 1.85;
     }
 
     .hero-actions {
@@ -274,7 +275,7 @@
     }
 
     .section-pad {
-      padding: 130px 0;
+      padding: 108px 0;
     }
 
     .section-kicker {
@@ -333,9 +334,9 @@
 
     .about-copy .lead {
       font-family: "Cormorant Garamond", serif;
-      font-size: clamp(1.65rem, 2.35vw, 2.55rem);
+      font-size: clamp(1.45rem, 2vw, 2.2rem);
       line-height: 1.18;
-      margin: 24px 0 30px;
+      margin: 20px 0 26px;
       color: var(--charcoal);
     }
 
@@ -490,7 +491,7 @@
 
     .faq-item h3 {
       font-family: "Inter", sans-serif;
-      font-size: .9rem;
+      font-size: 1rem;
       letter-spacing: .08em;
       text-transform: uppercase;
       margin-bottom: 10px;
@@ -499,6 +500,26 @@
     .faq-item p {
       color: var(--muted);
       margin: 0;
+      line-height: 1.9;
+    }
+
+    :lang(zh-CN) h1,
+    :lang(zh-CN) h2,
+    :lang(zh-CN) h3,
+    :lang(zh-CN) .section-title,
+    :lang(zh-CN) .film-overlay blockquote {
+      font-family: "Noto Serif SC", "Songti SC", "SimSun", serif;
+      letter-spacing: -.02em;
+    }
+
+    :lang(zh-CN) body,
+    :lang(zh-CN) p,
+    :lang(zh-CN) a,
+    :lang(zh-CN) button,
+    :lang(zh-CN) input,
+    :lang(zh-CN) textarea,
+    :lang(zh-CN) label {
+      font-family: "Inter", "Noto Sans SC", "Microsoft YaHei", sans-serif;
     }
 
     .investment-note {
@@ -541,11 +562,11 @@
 
     .film-list {
       display: grid;
-      gap: 76px;
+      gap: 56px;
     }
 
     .film-feature {
-      max-width: 1180px;
+      max-width: min(1280px, calc(100vw - 64px));
       margin: 0 auto;
     }
 
@@ -627,8 +648,9 @@
 
     .film-overlay p {
       color: rgba(255,255,255,.78);
-      max-width: 520px;
-      margin-bottom: 34px;
+      max-width: 430px;
+      margin-bottom: 28px;
+      line-height: 1.65;
     }
 
     .film-overlay .btn {
@@ -1344,7 +1366,7 @@
   <main>
     <section id="home" class="hero">
       <!-- Replace hero-video.mp4 with your own wedding highlight reel. Keep poster image for loading/mobile fallback. -->
-      <video class="hero-video" autoplay muted loop playsinline poster="https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=2200&auto=format&fit=crop">
+      <video class="hero-video" autoplay muted loop playsinline poster="assets/hero-poster.jpg">
         <source src="assets/hero-wedding-reel.mp4" type="video/mp4" />
       </video>
       <div class="container hero-content">
@@ -1353,7 +1375,7 @@
         <p data-i18n="hero.subtitle">Germany-based wedding videographer crafting honest, emotional and cinematic stories across Europe and beyond.</p>
         <div class="hero-actions">
           <a href="#films" class="btn btn-light" data-i18n="cta.viewFilms">View Films</a>
-          <a href="#enquiry" class="btn btn-light" data-i18n="cta.enquire">Enquire</a>
+          <a href="#enquiry" class="btn btn-light" data-i18n="cta.enquire">Request Availability</a>
         </div>
       </div>
     </section>
@@ -1363,10 +1385,10 @@
         <div class="about-media">
           <!-- Replace with your portrait / behind-the-scenes working photo -->
           <div class="portrait-main">
-            <img src="https://images.unsplash.com/photo-1532712938310-34cb3982ef74?q=80&w=1400&auto=format&fit=crop" alt="Wedding videographer working behind the scenes" />
+            <img src="assets/about-main.jpg" alt="Wedding videographer working behind the scenes" />
           </div>
           <div class="portrait-small">
-            <img src="https://images.unsplash.com/photo-1523438885200-e635ba2c371e?q=80&w=900&auto=format&fit=crop" alt="Emotional wedding moment" />
+            <img src="assets/about-detail.jpg" alt="Emotional wedding moment" />
           </div>
         </div>
 
@@ -1427,7 +1449,7 @@
           <article class="film-feature">
             <a class="film-preview" href="#enquiry" aria-label="Watch Villa Astor wedding film">
               <!-- Replace with your 16:9 film still or video preview -->
-              <video class="film-bg-video" muted loop playsinline preload="none" poster="https://images.unsplash.com/photo-1520854221256-17451cc331bf?q=80&w=2200&auto=format&fit=crop">
+              <video class="film-bg-video" muted loop playsinline preload="none" poster="assets/film-villa-astor-poster.jpg">
                 <source src="assets/villa-astor-preview.mp4" type="video/mp4" />
               </video>
               <div class="film-overlay">
@@ -1445,7 +1467,7 @@
 
           <article class="film-feature">
             <a class="film-preview" href="#enquiry" aria-label="Watch Château Vieux wedding film">
-              <video class="film-bg-video" muted loop playsinline preload="none" poster="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?q=80&w=2200&auto=format&fit=crop">
+              <video class="film-bg-video" muted loop playsinline preload="none" poster="assets/film-chateau-vieux-poster.jpg">
                 <source src="assets/chateau-vieux-preview.mp4" type="video/mp4" />
               </video>
               <div class="film-overlay">
@@ -1463,7 +1485,7 @@
 
           <article class="film-feature">
             <a class="film-preview" href="#enquiry" aria-label="Watch Alpine Vows wedding film">
-              <video class="film-bg-video" muted loop playsinline preload="none" poster="https://images.unsplash.com/photo-1519225421980-715cb0215aed?q=80&w=2200&auto=format&fit=crop">
+              <video class="film-bg-video" muted loop playsinline preload="none" poster="assets/film-alpine-vows-poster.jpg">
                 <source src="assets/alpine-vows-preview.mp4" type="video/mp4" />
               </video>
               <div class="film-overlay">
@@ -1521,7 +1543,7 @@
     </section>
 
     <section id="enquiry" class="enquiry section-pad">
-      <img class="enquiry-bg" src="https://images.unsplash.com/photo-1522673607200-164d1b6ce486?q=80&w=2200&auto=format&fit=crop" alt="Wedding hands detail background" />
+      <img class="enquiry-bg" src="assets/enquiry-bg.jpg" alt="Wedding hands detail background" />
       <div class="container enquiry-inner">
         <div class="enquiry-copy">
           <div class="section-kicker" data-i18n="enquiry.kicker">Enquiry</div>
@@ -1555,14 +1577,6 @@
             <input id="location" name="Location" type="text" placeholder="Venue, city, country" data-i18n-placeholder="form.locationPlaceholder" />
           </div>
           <div class="form-row">
-            <label for="guests" data-i18n="form.guests">Estimated guest count</label>
-            <input id="guests" name="Estimated guest count" type="text" placeholder="Approx. number of guests" data-i18n-placeholder="form.guestsPlaceholder" />
-          </div>
-          <div class="form-row">
-            <label for="coverage" data-i18n="form.coverage">Coverage interest</label>
-            <input id="coverage" name="Coverage interest" type="text" placeholder="Full day, ceremony only, multi-day, unsure" data-i18n-placeholder="form.coveragePlaceholder" />
-          </div>
-          <div class="form-row">
             <label for="message" data-i18n="form.message">What matters most to you about your wedding film?</label>
             <textarea id="message" name="Message" placeholder="Tell me about your wedding story, atmosphere, and what you hope to remember" data-i18n-placeholder="form.messagePlaceholder"></textarea>
           </div>
@@ -1581,7 +1595,7 @@
       en: {
         'nav.home': 'Home', 'nav.about': 'About', 'nav.films': 'Films', 'nav.faq': 'FAQ', 'nav.enquire': 'Enquire',
         'hero.eyebrow': 'Germany · Europe · Worldwide', 'hero.title': 'Wedding films that remember how it felt.', 'hero.subtitle': 'For couples who want to remember not only how their wedding looked — but how it felt.',
-        'cta.viewFilms': 'View Films', 'cta.enquire': 'Enquire', 'cta.watchFilm': 'Watch Film', 'cta.sendEnquiry': 'Request Availability',
+        'cta.viewFilms': 'View Films', 'cta.enquire': 'Request Availability', 'cta.watchFilm': 'Watch Film', 'cta.sendEnquiry': 'Request Availability',
         'about.kicker': 'About the videographer', 'about.title': 'I do not simply film what happens.', 'about.lead': 'I capture how it felt.',
         'about.p1': 'ZQ Films is a personal wedding videography brand based in Germany, created for couples who value feeling over perfection. My work blends documentary honesty with cinematic beauty, preserving not only how your day looked, but how it moved, sounded, and stayed with you.',
         'about.p2': 'I look for quiet gestures, glances before the ceremony, laughter that breaks tension, unplanned tears, and the rhythm that makes your celebration uniquely yours.',
@@ -1589,42 +1603,42 @@
         'why.kicker': 'Why film', 'why.title': 'Photography shows how it looked. Film brings back how it felt.', 'why.text': 'A wedding film preserves the things photographs cannot hold on their own: your voices, vows, laughter, the sound of your families, the music, the movement, and the atmosphere of the day.',
         'why.item1Title': 'Voices & vows', 'why.item1Text': 'The words, pauses and emotions that become more meaningful with time.', 'why.item2Title': 'Natural, not staged', 'why.item2Text': 'A quiet filming approach that lets you stay present with your people.', 'why.item3Title': 'Long-term memory', 'why.item3Text': 'A film becomes more valuable as the day moves further into the past.',
         'films.kicker': 'Selected films', 'films.title': 'Stories that feel like cinema.', 'films.intro': 'Each selected film is presented like a hero scene: a 16:9 cinematic frame, a quote, a place, and the feeling that stayed after the day ended.',
-        'film1.tag1': 'Destination Wedding', 'film1.tag2': 'Full Day Coverage', 'film1.tag3': 'Emotional Documentary', 'film1.quote': '“Like watching a movie.”', 'film1.cite': 'Iris & Pedro · Villa Astor, Sorrento, Italy', 'film1.title': 'Villa Astor', 'film1.location': 'Sorrento, Italy', 'film1.description': 'A Mediterranean wedding film shaped by soft light, elegant silence, and the feeling of two people fully present with each other.',
-        'film2.tag1': 'Castle Wedding', 'film2.tag2': 'France', 'film2.tag3': 'Candlelight Story', 'film2.quote': '“We felt everything again.”', 'film2.cite': 'Elise & Marc · Château Vieux, Bordeaux, France', 'film2.title': 'Château Vieux', 'film2.location': 'Bordeaux, France', 'film2.description': 'A delicate story of glances, candlelight, old stone arches, and laughter that moved softly through the evening.',
-        'film3.tag1': 'Alpine Wedding', 'film3.tag2': 'Germany', 'film3.tag3': 'Intimate Celebration', 'film3.quote': '“It brought us back to that day.”', 'film3.cite': 'Sofia & Lukas · Alpine Vows, Bavaria, Germany', 'film3.title': 'Alpine Vows', 'film3.location': 'Bavaria, Germany', 'film3.description': 'Crisp mountain air, whispered promises, and the gentle rhythm of nature framing a celebration with quiet depth.',
+        'film1.tag1': 'Destination Wedding', 'film1.tag2': 'Full Day Coverage', 'film1.tag3': 'Emotional Documentary', 'film1.quote': '“Like watching a movie.”', 'film1.cite': 'Iris & Pedro · Villa Astor, Sorrento, Italy', 'film1.title': 'Villa Astor', 'film1.location': 'Sorrento, Italy', 'film1.description': 'Mediterranean light, quiet elegance, and honest intimacy.',
+        'film2.tag1': 'Castle Wedding', 'film2.tag2': 'France', 'film2.tag3': 'Candlelight Story', 'film2.quote': '“We felt everything again.”', 'film2.cite': 'Elise & Marc · Château Vieux, Bordeaux, France', 'film2.title': 'Château Vieux', 'film2.location': 'Bordeaux, France', 'film2.description': 'Glances, candlelight, old stone, and laughter moving softly through the evening.',
+        'film3.tag1': 'Alpine Wedding', 'film3.tag2': 'Germany', 'film3.tag3': 'Intimate Celebration', 'film3.quote': '“It brought us back to that day.”', 'film3.cite': 'Sofia & Lukas · Alpine Vows, Bavaria, Germany', 'film3.title': 'Alpine Vows', 'film3.location': 'Bavaria, Germany', 'film3.description': 'Mountain air, whispered promises, and quiet depth.',
         'approach.kicker': 'Approach', 'approach.title': 'Present, but never intrusive.', 'approach.p1': 'I film quietly and intuitively, without turning your wedding into a production set. You should be able to stay with your guests, your emotions and the rhythm of the day.', 'approach.p2': 'My role is to observe, anticipate and preserve what is already there: real connection, natural movement, meaningful sound and atmosphere.',
         'trust.title': 'Made for international weddings.', 'trust.item1': 'Available in German, English and Chinese.', 'trust.item2': 'Based in Germany, available across Europe.', 'trust.item3': 'Suitable for castle, villa, intimate and destination weddings.', 'trust.item4': 'A limited number of weddings accepted each year.',
         'faq.kicker': 'FAQ', 'faq.title': 'Before you enquire.', 'faq.q1': 'Do we need a film if we already have a photographer?', 'faq.a1': 'Photography freezes the beauty of the day. Film preserves voice, movement, vows, speeches and atmosphere — the parts you can hear and feel again.', 'faq.q2': 'Will filming feel awkward or staged?', 'faq.a2': 'No. The approach is quiet and documentary-led, with minimal direction and no pressure to perform.', 'faq.q3': 'Do you travel?', 'faq.a3': 'Yes. I am based in Germany and available for weddings across Europe and beyond.', 'faq.q4': 'When should we enquire?', 'faq.a4': 'As early as possible, especially for summer weekends and destination weddings. I take on a limited number of weddings each year.', 'faq.q5': 'What do we receive?', 'faq.a5': 'Each collection is tailored to your day. Most couples enquire for full-day coverage, a cinematic highlight film and carefully edited memories.',
         'investment.title': 'An investment in memories that become more valuable with time.', 'investment.text': 'I accept a limited number of weddings each year so every film receives the attention it deserves. Share your date and location to request availability and an investment guide.',
         'enquiry.kicker': 'Enquiry', 'enquiry.title': 'Tell me about your wedding.', 'enquiry.text': 'Where it happens, who will be there, and how you want it to feel. Share your plans, your story, and the atmosphere you hope to remember.',
         'form.name': 'Name', 'form.email': 'Email', 'form.date': 'Wedding date', 'form.location': 'Location', 'form.guests': 'Estimated guest count', 'form.coverage': 'Coverage interest', 'form.message': 'What matters most to you about your wedding film?',
-        'form.namePlaceholder': 'Your full name', 'form.emailPlaceholder': 'you@example.com', 'form.datePlaceholder': 'DD / MM / YYYY', 'form.locationPlaceholder': 'Venue, city, country', 'form.guestsPlaceholder': 'Approx. number of guests', 'form.coveragePlaceholder': 'Full day, ceremony only, multi-day, unsure', 'form.messagePlaceholder': 'Tell me about your wedding story, atmosphere, and what you hope to remember', 'footer.tagline': 'Wedding videographer based in Germany'
+        'form.namePlaceholder': 'Your full name', 'form.emailPlaceholder': 'you@example.com', 'form.datePlaceholder': 'DD / MM / YYYY', 'form.locationPlaceholder': 'Venue, city, country', 'form.guestsPlaceholder': 'Approx. number of guests', 'form.coveragePlaceholder': 'Full day, ceremony only, multi-day, unsure', 'form.messagePlaceholder': 'Tell me about your date, location, guest count, atmosphere, and what you hope to remember', 'footer.tagline': 'Wedding videographer based in Germany'
       },
       de: {
         'nav.home': 'Start', 'nav.about': 'Über mich', 'nav.films': 'Filme', 'nav.faq': 'FAQ', 'nav.enquire': 'Anfrage',
-        'hero.eyebrow': 'Deutschland · Europa · Weltweit', 'hero.title': 'Hochzeitsfilme, die festhalten, wie es sich angefühlt hat.', 'hero.subtitle': 'Für Paare, die nicht nur sehen möchten, wie ihr Hochzeitstag aussah — sondern wieder fühlen möchten, wie er war.',
-        'cta.viewFilms': 'Filme ansehen', 'cta.enquire': 'Anfragen', 'cta.watchFilm': 'Film ansehen', 'cta.sendEnquiry': 'Verfügbarkeit anfragen',
+        'hero.eyebrow': 'Deutschland · Europa · Weltweit', 'hero.title': 'Hochzeitsfilme, die Gefühle bewahren.', 'hero.subtitle': 'Für Paare, die nicht nur sehen möchten, wie ihr Hochzeitstag aussah — sondern wieder fühlen möchten, wie er war.',
+        'cta.viewFilms': 'Filme ansehen', 'cta.enquire': 'Verfügbarkeit anfragen', 'cta.watchFilm': 'Film ansehen', 'cta.sendEnquiry': 'Verfügbarkeit anfragen',
         'about.kicker': 'Über den Hochzeitsvideografen', 'about.title': 'Ich filme nicht nur, was passiert.', 'about.lead': 'Ich halte fest, wie es sich angefühlt hat.',
         'about.p1': 'ZQ Films ist ein persönliche Hochzeitsvideografie-Marke mit Sitz in Deutschland, geschaffen für Paare, denen Gefühl wichtiger ist als Perfektion. Meine Arbeit verbindet dokumentarische Echtheit mit filmischer Schönheit.', 'about.p2': 'Ich suche nach leisen Gesten, Blicken vor der Zeremonie, Lachen, unerwarteten Tränen und dem Rhythmus, der eure Feier einzigartig macht.',
         'about.point1Title': 'Echte Emotionen', 'about.point1Text': 'Uninszenierte Momente, ehrliche Ausdrücke und die natürliche Energie zwischen Menschen.', 'about.point2Title': 'Filmische Schönheit', 'about.point2Text': 'Elegante Bildgestaltung, Atmosphäre, Musik und Rhythmus, geformt zu einem zeitlosen Film.',
         'why.kicker': 'Warum Film', 'why.title': 'Fotos zeigen, wie es aussah. Ein Film bringt zurück, wie es sich angefühlt hat.', 'why.text': 'Ein Hochzeitsfilm bewahrt, was Fotos allein nicht festhalten können: eure Stimmen, Gelübde, Lachen, die Worte eurer Familien, Musik, Bewegung und die Atmosphäre des Tages.',
         'why.item1Title': 'Stimmen & Gelübde', 'why.item1Text': 'Worte, Pausen und Emotionen, die mit der Zeit noch bedeutungsvoller werden.', 'why.item2Title': 'Natürlich, nicht gestellt', 'why.item2Text': 'Eine ruhige Arbeitsweise, damit ihr bei euren Menschen und Gefühlen bleiben könnt.', 'why.item3Title': 'Langfristige Erinnerung', 'why.item3Text': 'Ein Film wird wertvoller, je weiter der Tag in die Vergangenheit rückt.',
         'films.kicker': 'Ausgewählte Filme', 'films.title': 'Geschichten, die sich wie Kino anfühlen.', 'films.intro': 'Jeder Film erscheint wie eine eigene Szene: ein 16:9-Kinobild, ein Zitat, ein Ort und das Gefühl, das bleibt.',
-        'film1.tag1': 'Destination Wedding', 'film1.tag2': 'Ganztagesbegleitung', 'film1.tag3': 'Emotionale Doku', 'film1.quote': '„Wie ein echter Film.“', 'film1.cite': 'Iris & Pedro · Villa Astor, Sorrento, Italien', 'film1.title': 'Villa Astor', 'film1.location': 'Sorrento, Italien', 'film1.description': 'Ein mediterraner Hochzeitsfilm voller weichem Licht, eleganter Stille und echter Nähe.',
-        'film2.tag1': 'Schlosshochzeit', 'film2.tag2': 'Frankreich', 'film2.tag3': 'Kerzenlicht', 'film2.quote': '„Wir haben alles noch einmal gefühlt.“', 'film2.cite': 'Elise & Marc · Château Vieux, Bordeaux, Frankreich', 'film2.title': 'Château Vieux', 'film2.location': 'Bordeaux, Frankreich', 'film2.description': 'Eine zarte Geschichte aus Blicken, Kerzenlicht, alten Steinbögen und leisem Lachen.',
-        'film3.tag1': 'Alpenhochzeit', 'film3.tag2': 'Deutschland', 'film3.tag3': 'Intime Feier', 'film3.quote': '„Es hat uns direkt an diesen Tag zurückgebracht.“', 'film3.cite': 'Sofia & Lukas · Alpine Vows, Bayern, Deutschland', 'film3.title': 'Alpine Vows', 'film3.location': 'Bayern, Deutschland', 'film3.description': 'Klare Bergluft, leise Versprechen und die ruhige Kraft der Natur als Rahmen ihrer Feier.',
+        'film1.tag1': 'Destination Wedding', 'film1.tag2': 'Ganztagesbegleitung', 'film1.tag3': 'Emotionale Doku', 'film1.quote': '„Wie ein echter Film.“', 'film1.cite': 'Iris & Pedro · Villa Astor, Sorrento, Italien', 'film1.title': 'Villa Astor', 'film1.location': 'Sorrento, Italien', 'film1.description': 'Mediterranes Licht, elegante Stille und echte Nähe.',
+        'film2.tag1': 'Schlosshochzeit', 'film2.tag2': 'Frankreich', 'film2.tag3': 'Kerzenlicht', 'film2.quote': '„Wir haben alles noch einmal gefühlt.“', 'film2.cite': 'Elise & Marc · Château Vieux, Bordeaux, Frankreich', 'film2.title': 'Château Vieux', 'film2.location': 'Bordeaux, Frankreich', 'film2.description': 'Blicke, Kerzenlicht, alter Stein und leises Lachen.',
+        'film3.tag1': 'Alpenhochzeit', 'film3.tag2': 'Deutschland', 'film3.tag3': 'Intime Feier', 'film3.quote': '„Es hat uns direkt an diesen Tag zurückgebracht.“', 'film3.cite': 'Sofia & Lukas · Alpine Vows, Bayern, Deutschland', 'film3.title': 'Alpine Vows', 'film3.location': 'Bayern, Deutschland', 'film3.description': 'Bergluft, leise Versprechen und ruhige Tiefe.',
         'approach.kicker': 'Arbeitsweise', 'approach.title': 'Nah dran, aber nie aufdringlich.', 'approach.p1': 'Ich filme ruhig und intuitiv, ohne eure Hochzeit in ein Filmset zu verwandeln. Ihr sollt bei euren Gästen, euren Gefühlen und dem Rhythmus des Tages bleiben können.', 'approach.p2': 'Meine Aufgabe ist es, zu beobachten, vorauszusehen und zu bewahren, was bereits da ist: echte Verbindung, natürliche Bewegung, bedeutungsvoller Klang und Atmosphäre.',
         'trust.title': 'Gemacht für internationale Hochzeiten.', 'trust.item1': 'Begleitung auf Deutsch, Englisch und Chinesisch möglich.', 'trust.item2': 'Mit Sitz in Deutschland, europaweit verfügbar.', 'trust.item3': 'Geeignet für Schloss-, Villa-, intime und Destination Weddings.', 'trust.item4': 'Ich begleite nur eine begrenzte Anzahl an Hochzeiten pro Jahr.',
         'faq.kicker': 'FAQ', 'faq.title': 'Vor eurer Anfrage.', 'faq.q1': 'Brauchen wir einen Film, wenn wir schon einen Fotografen haben?', 'faq.a1': 'Fotografie hält die Schönheit fest. Film bewahrt Stimmen, Bewegung, Gelübde, Reden und Atmosphäre — das, was ihr wieder hören und fühlen könnt.', 'faq.q2': 'Wird das Filmen unangenehm oder gestellt sein?', 'faq.a2': 'Nein. Die Arbeitsweise ist ruhig und dokumentarisch, mit minimaler Anleitung und ohne Druck, etwas darstellen zu müssen.', 'faq.q3': 'Reist du auch?', 'faq.a3': 'Ja. Ich habe meinen Sitz in Deutschland und begleite Hochzeiten in Europa und darüber hinaus.', 'faq.q4': 'Wann sollten wir anfragen?', 'faq.a4': 'So früh wie möglich, besonders für Sommerwochenenden und Destination Weddings. Ich nehme nur eine begrenzte Anzahl an Hochzeiten pro Jahr an.', 'faq.q5': 'Was erhalten wir?', 'faq.a5': 'Jede Begleitung wird auf euren Tag abgestimmt. Viele Paare fragen eine Ganztagesbegleitung, einen filmischen Highlightfilm und sorgfältig editierte Erinnerungen an.',
         'investment.title': 'Eine Investition in Erinnerungen, die mit der Zeit wertvoller werden.', 'investment.text': 'Ich begleite nur eine begrenzte Anzahl an Hochzeiten pro Jahr, damit jeder Film die Aufmerksamkeit bekommt, die er verdient. Sendet mir Datum und Ort, um Verfügbarkeit und Investment Guide anzufragen.',
         'enquiry.kicker': 'Anfrage', 'enquiry.title': 'Erzählt mir von eurer Hochzeit.', 'enquiry.text': 'Wo sie stattfinden wird, wer dabei sein wird und wie sie sich anfühlen soll. Teilt eure Pläne, eure Geschichte und die Atmosphäre, die ihr bewahren möchtet.',
         'form.name': 'Name', 'form.email': 'E-Mail', 'form.date': 'Hochzeitsdatum', 'form.location': 'Ort', 'form.guests': 'Geschätzte Gästezahl', 'form.coverage': 'Gewünschte Begleitung', 'form.message': 'Was ist euch bei eurem Hochzeitsfilm am wichtigsten?',
-        'form.namePlaceholder': 'Euer vollständiger Name', 'form.emailPlaceholder': 'ihr@example.com', 'form.datePlaceholder': 'TT / MM / JJJJ', 'form.locationPlaceholder': 'Location, Stadt, Land', 'form.guestsPlaceholder': 'Ungefähre Gästezahl', 'form.coveragePlaceholder': 'Ganztag, nur Zeremonie, mehrere Tage, noch unsicher', 'form.messagePlaceholder': 'Erzählt mir von eurer Hochzeit, der Atmosphäre und was ihr bewahren möchtet', 'footer.tagline': 'Hochzeitsvideograf mit Sitz in Deutschland'
+        'form.namePlaceholder': 'Euer vollständiger Name', 'form.emailPlaceholder': 'ihr@example.com', 'form.datePlaceholder': 'TT / MM / JJJJ', 'form.locationPlaceholder': 'Location, Stadt, Land', 'form.guestsPlaceholder': 'Ungefähre Gästezahl', 'form.coveragePlaceholder': 'Ganztag, nur Zeremonie, mehrere Tage, noch unsicher', 'form.messagePlaceholder': 'Erzählt mir von Datum, Ort, Gästezahl, Atmosphäre und was ihr bewahren möchtet', 'footer.tagline': 'Hochzeitsvideograf mit Sitz in Deutschland'
       },
       zh: {
         'nav.home': '首页', 'nav.about': '关于我', 'nav.films': '作品', 'nav.faq': 'FAQ', 'nav.enquire': '咨询',
         'hero.eyebrow': '德国 · 欧洲 · 全球', 'hero.title': '记录婚礼那一天真正的感受。', 'hero.subtitle': '为那些不只想看到婚礼样子，也想重新感受那一天的新人而创作。',
-        'cta.viewFilms': '观看作品', 'cta.enquire': '联系咨询', 'cta.watchFilm': '观看影片', 'cta.sendEnquiry': '咨询档期',
+        'cta.viewFilms': '观看作品', 'cta.enquire': '咨询档期', 'cta.watchFilm': '观看影片', 'cta.sendEnquiry': '咨询档期',
         'about.kicker': '关于婚礼摄像师', 'about.title': '我不只是拍摄发生了什么。', 'about.lead': '我记录的是那一天的感受。', 'about.p1': 'ZQ Films 是一个常驻德国的个人婚礼摄像品牌，为重视情绪与审美的新人创作婚礼影像。我的作品将纪录片式真实与电影化美感结合，保留的不只是画面，还有那一天的氛围、节奏和心动。', 'about.p2': '我关注那些安静的动作、仪式前的眼神、打破紧张的笑声、没有预设的眼泪，以及让你们的婚礼真正独特的情绪节奏。',
         'about.point1Title': '真实情绪', 'about.point1Text': '不刻意摆拍，捕捉自然表情和人与人之间真实的能量。', 'about.point2Title': '电影美感', 'about.point2Text': '用构图、氛围、音乐和节奏，把真实婚礼塑造成值得珍藏的电影。',
         'why.kicker': '为什么需要影片', 'why.title': '照片记录样子，影片带回感受。', 'why.text': '婚礼电影能保留照片无法完整承载的内容：你们的声音、誓言、笑声、家人的讲话、音乐、动作以及婚礼当天的氛围。',
@@ -1639,7 +1653,7 @@
         'investment.title': '这是一份会随着时间越来越珍贵的记忆投资。', 'investment.text': '我每年只接受有限数量的婚礼拍摄，让每一部影片都得到足够的创作时间。请分享日期和地点，以便咨询档期和定制报价。',
         'enquiry.kicker': '咨询', 'enquiry.title': '告诉我你们的婚礼。', 'enquiry.text': '它会在哪里发生，会有哪些人在场，以及你希望它是什么感觉。分享你们的计划、故事和想要保留下来的氛围。',
         'form.name': '姓名', 'form.email': '邮箱', 'form.date': '婚礼日期', 'form.location': '地点', 'form.guests': '预计人数', 'form.coverage': '拍摄需求', 'form.message': '你们最希望婚礼影片保留什么？',
-        'form.namePlaceholder': '你的姓名', 'form.emailPlaceholder': 'you@example.com', 'form.datePlaceholder': '日 / 月 / 年', 'form.locationPlaceholder': '场地、城市、国家', 'form.guestsPlaceholder': '大概宾客人数', 'form.coveragePlaceholder': '全天、只拍仪式、多日婚礼、还不确定', 'form.messagePlaceholder': '告诉我你们的婚礼故事、氛围和想保留下来的感受', 'footer.tagline': '常驻德国的婚礼摄像师'
+        'form.namePlaceholder': '你的姓名', 'form.emailPlaceholder': 'you@example.com', 'form.datePlaceholder': '日 / 月 / 年', 'form.locationPlaceholder': '场地、城市、国家', 'form.guestsPlaceholder': '大概宾客人数', 'form.coveragePlaceholder': '全天、只拍仪式、多日婚礼、还不确定', 'form.messagePlaceholder': '告诉我你们的日期、地点、人数、氛围和最想保留的感受', 'footer.tagline': '常驻德国的婚礼摄像师'
       }
     };
 
